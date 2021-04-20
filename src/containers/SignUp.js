@@ -2,13 +2,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SignUpForm from '../components/signUpForm';
-import { signUp } from '../requests/signUp';
+import signUpRequest from '../requests/signUpRequest';
 import { createToken } from '../store/actions';
 
-export const SignUp = ({ createToken, history }) => {
+export const SignUp = ({ createToken }) => {
   const handleSubmit = data => {
-    signUp(createToken, data);
-    history.push('/');
+    signUpRequest(createToken, data);
   };
 
   return (
@@ -22,7 +21,6 @@ export const SignUp = ({ createToken, history }) => {
 
 SignUp.propTypes = {
   createToken: PropTypes.func.isRequired,
-  history: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 const mapDispatchToProp = {
