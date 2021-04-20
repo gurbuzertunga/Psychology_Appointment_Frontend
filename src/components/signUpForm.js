@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-
 export const signUpForm = ({ handleClick }) => {
   const [data, setData] = useState({
     name: '',
@@ -10,23 +9,20 @@ export const signUpForm = ({ handleClick }) => {
     passwordConfirm: '',
   });
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     let {
-      name, email, password, passwordConfirm
+      name, email, password, passwordConfirm,
     } = data;
 
-    if (e.target.id == 'name') {
+    if (e.target.id === 'name') {
       name = e.target.value;
-    }
-    else if (e.target.id == 'email') {
+    } else if (e.target.id === 'email') {
       email = e.target.value;
-    }
-    else if (e.target.id == 'password') {
+    } else if (e.target.id === 'password') {
       password = e.target.value;
-    }
-    else {
+    } else {
       passwordConfirm = e.target.value;
-    };
+    }
     setData({
       name,
       email,
@@ -35,15 +31,40 @@ export const signUpForm = ({ handleClick }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     handleClick(data);
-  }
-
+  };
 
   return (
-    <form onSubmit={handleSubmit} >
-      
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="name">
+        Username:
+        {' '}
+        <input type="text" id="name" value={data.name} onChange={handleChange} />
+      </label>
+      <label htmlFor="email">
+        E-Mail:
+        {' '}
+        <input type="email" id="email" value={data.email} onChange={handleChange} />
+      </label>
+      <label htmlFor="password">
+        Password:
+        {' '}
+        <input type="text" id="password" value={data.password} onChange={handleChange} />
+      </label>
+      <label htmlFor="passwordConfirm">
+        Password Confirmation:
+        {' '}
+        <input type="text" id="passwordConfirm" value={data.passwordConfirm} onChange={handleChange} />
+      </label>
+      <input type="submit" value="submit" />
     </form>
-  )
-}
+  );
+};
+
+signUpForm.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
+
+export default signUpForm;
