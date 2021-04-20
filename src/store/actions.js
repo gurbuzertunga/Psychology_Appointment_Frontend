@@ -3,33 +3,33 @@ const REMOVE_TOKEN = 'REMOVE_TOKEN';
 const CREATE_CONSULTANCIES_LIST = 'CREATE_CONSULTANCIES_LIST';
 const CREATE_APPOINTMENTS_LIST = 'CREATE_APPOINTMENTS_LIST';
 const SET_APPOINTMENT = 'SET_APPOINTMENT';
-const REMOVE_APPOINTMENT ='REMOVE_APPOINTMENT';
+const REMOVE_APPOINTMENT = 'REMOVE_APPOINTMENT';
 
-const createToken = (token) => ({
+const createToken = token => ({
   type: CREATE_TOKEN,
   payload: token,
 });
 
-const removeToken = (token) => ({
+const removeToken = () => ({
   type: REMOVE_TOKEN,
 });
 
-const createConsultanciesList = (list) => ({
+const createConsultanciesList = list => ({
   type: CREATE_CONSULTANCIES_LIST,
   payload: list,
 });
 
-const createAppointmentsList = (list) => ({
+const createAppointmentsList = list => ({
   type: CREATE_APPOINTMENTS_LIST,
   payload: list,
 });
 
-const setAppointment = (appointment) => ({
+const setAppointment = appointment => ({
   type: SET_APPOINTMENT,
   payload: appointment,
 });
 
-const removeAppointment = (id) => ({
+const removeAppointment = id => ({
   type: REMOVE_APPOINTMENT,
   payload: id,
 });

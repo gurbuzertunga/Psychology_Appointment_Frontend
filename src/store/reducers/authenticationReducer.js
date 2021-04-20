@@ -1,10 +1,10 @@
-import { CREATE_TOKEN, REMOVE_TOKEN } from '../actions'
+import { CREATE_TOKEN, REMOVE_TOKEN } from '../actions';
 
 const defaultState = {
-  name = '',
-  email = '',
-  authToken = '',
-}
+  name: '',
+  email: '',
+  authToken: '',
+};
 
 const authenticationReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -12,9 +12,9 @@ const authenticationReducer = (state = defaultState, action) => {
       return action.payload;
     case REMOVE_TOKEN:
       return {
-        name = '',
-        email = '',
-        authToken = '',
+        name: '',
+        email: '',
+        authToken: '',
       };
     default:
       return state;
