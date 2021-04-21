@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { BASE } from '../services/appointmentapi';
 
 const signUpRequest = async (createToken, userdata) => {
@@ -10,6 +11,9 @@ const signUpRequest = async (createToken, userdata) => {
   try {
     const options = {
       method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -17,7 +21,7 @@ const signUpRequest = async (createToken, userdata) => {
       body: JSON.stringify(body),
     };
 
-    const response = await fetch(`${BASE}/signup`, options);
+    const response = await axios.get(`${BASE}/signup`, options);
     const data = await response.json();
 
     const auth = {

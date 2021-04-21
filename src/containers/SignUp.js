@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SignUpForm from '../components/signUpForm';
 import signUpRequest from '../requests/signUpRequest';
-import { createToken } from '../store/actions';
+import { createToken } from '../actions/index';
 
 export const SignUp = ({ createToken }) => {
   const handleSubmit = data => {
+    console.log(createToken);
     signUpRequest(createToken, data);
   };
 
