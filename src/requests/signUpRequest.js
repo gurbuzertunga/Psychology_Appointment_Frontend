@@ -1,4 +1,4 @@
-const signUpRequest = (createToken, userdata) => {
+const signUpRequest = ({ createToken }, userdata) => {
   const body = {
     name: userdata.name,
     email: userdata.email,

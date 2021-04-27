@@ -6,9 +6,8 @@ import signUpRequest from '../requests/signUpRequest';
 import { createToken } from '../actions/index';
 
 export const SignUp = ({ dispatch }) => {
-  console.log(dispatch);
   const handleSubmit = data => {
-    signUpRequest(createToken, data);
+    signUpRequest(dispatch(createToken), data);
   };
 
   return (
