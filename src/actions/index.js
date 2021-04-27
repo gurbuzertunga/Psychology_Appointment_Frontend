@@ -1,14 +1,19 @@
-const CREATE_TOKEN = 'CREATE_TOKEN';
-const REMOVE_TOKEN = 'REMOVE_TOKEN';
-const CREATE_CONSULTANCIES_LIST = 'CREATE_CONSULTANCIES_LIST';
-const CREATE_APPOINTMENTS_LIST = 'CREATE_APPOINTMENTS_LIST';
-const SET_APPOINTMENT = 'SET_APPOINTMENT';
-const REMOVE_APPOINTMENT = 'REMOVE_APPOINTMENT';
+/* eslint-disable */
+import { BASE } from '../services/appointmentapi';
+import { CREATE_TOKEN } from './types';
 
-const createToken = token => ({
-  type: CREATE_TOKEN,
-  payload: token,
-});
+const createToken = async options => {
+  const response = await fetch(`${BASE}/signup`, options);
+  const data = await response.json();
+  const auth = {
+    authToken: data.auth_token,
+  };
+  console.log(auth);
+  return {
+    type: CREATE_TOKEN,
+    payload: auth,
+  }
+};
 
 const removeToken = () => ({
   type: REMOVE_TOKEN,
@@ -36,15 +41,9 @@ const removeAppointment = id => ({
 
 export {
   createToken,
-  CREATE_TOKEN,
   removeToken,
-  REMOVE_TOKEN,
-  CREATE_CONSULTANCIES_LIST,
   createConsultanciesList,
-  CREATE_APPOINTMENTS_LIST,
   createAppointmentsList,
-  SET_APPOINTMENT,
   setAppointment,
-  REMOVE_APPOINTMENT,
   removeAppointment,
 };

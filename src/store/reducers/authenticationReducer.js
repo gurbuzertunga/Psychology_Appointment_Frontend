@@ -1,4 +1,4 @@
-import { CREATE_TOKEN, REMOVE_TOKEN } from '../../actions';
+import { CREATE_TOKEN, REMOVE_TOKEN } from '../../actions/types';
 
 const defaultState = {
   name: '',
@@ -9,8 +9,8 @@ const defaultState = {
 const authenticationReducer = (state = defaultState, action) => {
   switch (action.type) {
     case CREATE_TOKEN:
-      console.log(action.payload);
-      return action.payload;
+      console.log('sadsafdasdf');
+      return { ...state, authToken: action.payload };
     case REMOVE_TOKEN:
       return {
         name: '',
@@ -18,6 +18,7 @@ const authenticationReducer = (state = defaultState, action) => {
         authToken: '',
       };
     default:
+      console.log(action.type);
       return state;
   }
 };
