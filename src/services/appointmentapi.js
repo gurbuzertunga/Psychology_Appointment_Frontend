@@ -1,7 +1,10 @@
-export const BASE = 'http://localhost:9000/';
-export const CONSULTANCIES = 'consultancies';
-export const APPOINTMENTS = 'appointments';
-export const SIGNUP = 'signup';
-export const LOGIN = 'auth/login';
+const base = 'http://127.0.0.1:9000/';
+const TYPES = {
+  BASE: `${base}`,
+  CONSULTANCIES: 'consultancie',
+  APPOINTMENTS: 'apointments',
+  SIGNUP: 'signup',
+  LOGIN: 'auth/login',
+};
 
-export default BASE;
+export default TYPES;

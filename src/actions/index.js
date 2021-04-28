@@ -1,9 +1,9 @@
 /* eslint-disable */
-import { BASE } from '../services/appointmentapi';
+import TYPES from '../services/appointmentapi';
 import { CREATE_TOKEN } from './types';
 
 const createToken = async options => {
-  const response = await fetch(`${BASE}/signup`, options);
+  const response = await fetch(`${TYPES.BASE}/signup`, options);
   const data = await response.json();
   const auth = {
     authToken: data.auth_token,
