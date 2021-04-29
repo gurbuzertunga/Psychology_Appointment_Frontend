@@ -8,13 +8,16 @@ const createToken = async options => {
   const auth = {
     authToken: data.auth_token,
   };
-  console.log(auth);
+  console.log({
+    token: CREATE_TOKEN,
+    auth: auth
+  });
   return {
     type: CREATE_TOKEN,
     payload: auth,
   }
 };
-
+console.log(typeof CREATE_TOKEN);
 const removeToken = () => ({
   type: REMOVE_TOKEN,
 });
