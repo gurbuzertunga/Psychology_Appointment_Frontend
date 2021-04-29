@@ -7,6 +7,7 @@ const defaultState = {
 };
 
 const authenticationReducer = (state = defaultState, action) => {
+  console.log(action.type);
   switch (action.type) {
     case CREATE_TOKEN:
       console.log('sadsafdasdf');
