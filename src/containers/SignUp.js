@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -5,10 +6,11 @@ import SignUpForm from '../components/signUpForm';
 import signUpRequest from '../requests/signUpRequest';
 import { createToken, testAction } from '../actions/index';
 
-export const SignUp = ({ createToken, testAction }) => {
+export const SignUp = (props) => {
+  console.log(props)
   const handleSubmit = data => {
-    testAction();
-    signUpRequest(createToken, data);
+    // testActionASDASD();
+    // signUpRequest(createToken, data);
   };
   return (
     <div>
@@ -23,7 +25,7 @@ SignUp.propTypes = {
   testAction: PropTypes.func,
 };
 SignUp.defaultProps = {
-  createToken,
-  testAction,
+  // createToken,
+  // testAction,
 };
-export default connect(null, { createToken, testAction })(SignUp);
+export default connect(null, { testAction })(SignUp);

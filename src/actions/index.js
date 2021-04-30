@@ -21,7 +21,7 @@ const createToken = options => {
     }
   }
 };
-const createTokenSuccess = (data)=>{
+const createTokenSuccess = (data) => {
   return {
     type: types.CREATE_TOKEN,
     payload: data,
@@ -33,7 +33,7 @@ const createTokenSuccess = (data)=>{
 //   const auth = {
 //     authToken: data.auth_token,
 //   };
-  
+
 //   console.log(types);
 //   return {
 //     type: types.CREATE_TOKEN,
@@ -44,9 +44,11 @@ const createTokenSuccess = (data)=>{
 const removeToken = () => ({
   type: REMOVE_TOKEN,
 });
-const testAction = () => ({
-  type: 'TEST',
-});
+const testAction = () => {
+  return {
+    type: 'TEST',
+  }
+};
 const createConsultanciesList = list => ({
   type: CREATE_CONSULTANCIES_LIST,
   payload: list,
