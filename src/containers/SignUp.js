@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import SignUpForm from '../components/signUpForm';
 import signUpRequest from '../requests/signUpRequest';
-import { createToken } from '../actions/index';
+import { createToken, testAction } from '../actions/index';
 
-export const SignUp = () => {
+export const SignUp = ({ createToken, testAction }) => {
   const handleSubmit = data => {
+    testAction();
     signUpRequest(createToken, data);
   };
-
   return (
     <div>
       <h1>Welcome to Sign Up Page!</h1>
@@ -17,5 +18,12 @@ export const SignUp = () => {
     </div>
   );
 };
-
-export default connect(null, { createToken })(SignUp);
+SignUp.propTypes = {
+  createToken: PropTypes.func,
+  testAction: PropTypes.func,
+};
+SignUp.defaultProps = {
+  createToken,
+  testAction,
+};
+export default connect(null, { createToken, testAction })(SignUp);

@@ -1,27 +1,20 @@
-import { CREATE_TOKEN, REMOVE_TOKEN } from '../../actions/types';
+import * as types from '../../actions/types';
 
 const defaultState = {
   name: '',
   email: '',
+  test: '',
   authToken: '',
 };
-
 const authenticationReducer = (state = defaultState, action) => {
-  console.log(action.type);
   switch (action.type) {
-    case CREATE_TOKEN:
-      console.log('sadsafdasdf');
+    case types.CREATE_TOKEN:
+      console.log(action, 'ddsadw');
       return { ...state, authToken: action.payload };
-    case REMOVE_TOKEN:
-      return {
-        name: '',
-        email: '',
-        authToken: '',
-      };
+    case 'TEST':
+      return { ...state, test: 'test worked' };
     default:
-      console.log(action.type);
       return state;
   }
 };
-
 export default authenticationReducer;

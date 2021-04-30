@@ -5,7 +5,6 @@ import {
 } from 'react-router-dom';
 import NavBar from '../containers/NavBar';
 import { SignUp } from '../containers/SignUp';
-import signUpRequest from '../requests/signUpRequest';
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/signup" component={SignUp}>
-            <SignUp createToken={signUpRequest} />
+            <SignUp />
           </Route>
         </Switch>
       </div>
