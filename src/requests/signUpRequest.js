@@ -1,3 +1,5 @@
+import { BASE } from '../services/appointmentapi';
+
 const signUpRequest = async (createToken, userdata) => {
   const body = {
     name: userdata.name,
@@ -16,8 +18,14 @@ const signUpRequest = async (createToken, userdata) => {
     },
     body: JSON.stringify(body),
   };
+  const response = await fetch(`${BASE}/signup`, options);
+  const data = await response.json();
+  const auth = {
+    authToken: data.auth_token,
+  };
   try {
-    createToken(options);
+    console.log(createToken(auth));
+    createToken(auth);
   } catch (error) {
     createToken(error);
   }

@@ -4,7 +4,7 @@ import {
   Route,
 } from 'react-router-dom';
 import NavBar from '../containers/NavBar';
-import { SignUp } from '../containers/SignUp';
+import SignUp from '../containers/SignUp';
 
 function App() {
   return (
@@ -13,9 +13,7 @@ function App() {
         <h1>Hello World!</h1>
         <NavBar />
         <Switch>
-          <Route exact path="/signup" component={SignUp}>
-            <SignUp />
-          </Route>
+          <Route exact path="/signup" component={SignUp} />
         </Switch>
       </div>
     </Router>
