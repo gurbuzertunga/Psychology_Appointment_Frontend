@@ -7,7 +7,9 @@ import { createToken, testAction } from '../actions/index';
 
 const SignUp = ({ testAction, createToken }) => {
   const handleSubmit = data => {
-    testAction();
+    const { name, email } = data;
+    console.log({ name, email });
+    testAction({ name, email });
     signUpRequest(createToken, data);
   };
   return (

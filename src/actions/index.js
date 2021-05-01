@@ -6,9 +6,6 @@ const CREATE_APPOINTMENTS_LIST = 'CREATE_APPOINTMENTS_LIST';
 const SET_APPOINTMENT = 'SET_APPOINTMENT';
 const REMOVE_APPOINTMENT = 'REMOVE_APPOINTMENT';
 
-// import axios from 'axios';
-
-
 // const createToken = options => {
 //   console.log('1');
 //   return async dispatch => {
@@ -43,9 +40,10 @@ const createToken = auth => {
 const removeToken = () => ({
   type: REMOVE_TOKEN,
 });
-const testAction = () => {
+const testAction = data => {
   return {
     type: 'TEST',
+    payload: data,
   }
 };
 const createConsultanciesList = list => ({
