@@ -14,8 +14,6 @@ const authenticationReducer = (state = defaultState, action) => {
       console.log(action.payload, 'ddsadw');
       return { ...state, authToken: action.payload};
     case 'TEST':
-      console.log(action.payload, 'ddsadw');
-      console.log('TEST REDUCER WORLKED');
       return { ...state, test: 'test worked', name: action.payload.name, email: action.payload.email };
     default:
       return state;

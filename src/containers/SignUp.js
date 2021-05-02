@@ -29,4 +29,4 @@ SignUp.defaultProps = {
   createToken,
   testAction,
 };
-export default connect(null, { testAction })(SignUp);
+export default connect(null, { createToken, testAction })(SignUp);

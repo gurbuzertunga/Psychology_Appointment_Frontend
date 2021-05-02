@@ -23,7 +23,6 @@ const signUpRequest = async (createToken, userdata) => {
   const auth = {
     authToken: data.auth_token,
   };
-  console.log(auth);
   try {
     createToken(auth);
   } catch (error) {
