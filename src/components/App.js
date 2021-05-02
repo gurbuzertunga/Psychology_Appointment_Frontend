@@ -6,6 +6,7 @@ import {
 import NavBar from '../containers/NavBar';
 import SignUp from '../containers/SignUp';
 import Login from '../containers/Login';
+import Appointments from '../containers/Appointments';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/auth/login" component={Login} />
+          <Route exact path="/appointments" component={Appointments} />
         </Switch>
       </div>
     </Router>

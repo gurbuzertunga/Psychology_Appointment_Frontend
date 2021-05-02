@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 const Appointments = () => {
+  console.log('test');
   return (
     <div>
-      
+      <h1>Appointments Page</h1>
     </div>
-  )
-}
+  );
+};
 
 export default Appointments;
