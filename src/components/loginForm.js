@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export const loginForm = ({ handleClick }) => {
+const LoginForm = ({ handleClick }) => {
   const [data, setData] = useState({
     email: '',
     password: '',
@@ -45,8 +45,8 @@ export const loginForm = ({ handleClick }) => {
   );
 };
 
-loginForm.propTypes = {
+LoginForm.propTypes = {
   handleClick: PropTypes.func.isRequired,
 };
 
-export default loginForm;
+export default LoginForm;

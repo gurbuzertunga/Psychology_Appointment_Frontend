@@ -8,23 +8,6 @@ const CREATE_APPOINTMENTS_LIST = 'CREATE_APPOINTMENTS_LIST';
 const SET_APPOINTMENT = 'SET_APPOINTMENT';
 const REMOVE_APPOINTMENT = 'REMOVE_APPOINTMENT';
 
-// const createToken = auth => {
-//   console.log('1');
-//   console.log(auth);
-//   return async dispatch => {
-//     console.log('2');
-//     try {
-//       // const response = await fetch(`${BASE}/signup`, options);
-//       // const data = await response.json();
-//       // const auth = {
-//       //   authToken: data.auth_token,
-//       // };
-//       dispatch(createTokenSuccess(auth))
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   }
-// };
 const createToken = (data) => {
   console.log(data.authToken);
   return {
@@ -32,7 +15,6 @@ const createToken = (data) => {
     payload: data.authToken,
   }
 }
-
 
 const removeToken = () => ({
   type: REMOVE_TOKEN,

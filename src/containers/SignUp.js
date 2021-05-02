@@ -16,7 +16,7 @@ const SignUp = ({ testAction, createToken }) => {
     <div>
       <h1>Welcome to Sign Up Page!</h1>
       <SignUpForm handleClick={handleSubmit} />
-      <Link to="/login">You have already an account?</Link>
+      <Link to="/auth/login">You have already an account?</Link>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import NavBar from '../containers/NavBar';
 import SignUp from '../containers/SignUp';
+import Login from '../containers/Login';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/auth/login" component={Login} />
         </Switch>
       </div>
     </Router>
