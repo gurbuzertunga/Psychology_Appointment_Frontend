@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import SignUpForm from '../components/signUpForm';
 import signUpRequest from '../requests/signUpRequest';
-import { createToken } from '../actions/index';
+import { createToken, testAction } from '../actions/index';
 
-export const SignUp = ({ dispatch }) => {
+const SignUp = ({ testAction, createToken }) => {
   const handleSubmit = data => {
-    signUpRequest(dispatch(createToken), data);
+    const { name, email } = data;
+    console.log({ name, email });
+    testAction({ name, email });
+    signUpRequest(createToken, data);
   };
-
   return (
     <div>
       <h1>Welcome to Sign Up Page!</h1>
@@ -18,9 +20,13 @@ export const SignUp = ({ dispatch }) => {
     </div>
   );
 };
-
 SignUp.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  createToken: PropTypes.func,
+  testAction: PropTypes.func,
 };
 
-export default connect(null, { createToken })(SignUp);
+SignUp.defaultProps = {
+  createToken,
+  testAction,
+};
+export default connect(null, { createToken, testAction })(SignUp);
