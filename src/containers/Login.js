@@ -8,7 +8,6 @@ import { createToken, testAction } from '../actions/index';
 const Login = ({ testAction, createToken }) => {
   const handleSubmit = data => {
     const { name, email } = data;
-    console.log({ name, email });
     testAction({ name, email });
     loginRequest(createToken, data);
   };

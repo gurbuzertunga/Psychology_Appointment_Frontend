@@ -1,6 +1,4 @@
 /* eslint-disable */
-import { BASE } from '../services/appointmentapi';
-
 const CREATE_TOKEN = 'CREATE_TOKEN';
 const REMOVE_TOKEN = 'REMOVE_TOKEN';
 const CREATE_CONSULTANCIES_LIST = 'CREATE_CONSULTANCIES_LIST';
@@ -9,7 +7,6 @@ const SET_APPOINTMENT = 'SET_APPOINTMENT';
 const REMOVE_APPOINTMENT = 'REMOVE_APPOINTMENT';
 
 const createToken = (data) => {
-  console.log(data.authToken);
   return {
     type: CREATE_TOKEN,
     payload: data.authToken,
@@ -44,9 +41,13 @@ const removeAppointment = id => ({
 export {
   CREATE_TOKEN,
   createToken,
+  CREATE_CONSULTANCIES_LIST,
   createConsultanciesList,
+  CREATE_APPOINTMENTS_LIST,
   createAppointmentsList,
+  SET_APPOINTMENT,
   setAppointment,
+  REMOVE_APPOINTMENT,
   removeAppointment,
   testAction,
 };

@@ -1,36 +1,24 @@
 /* eslint-disable */
-import React from 'react';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { BASE, CONSULTANCIES } from '../services/appointmentapi';
 
-const ConsultancyRequest = async props => {
-  const { authToken } = props;
-  console.log(authToken);
+const consultancyRequest = async createConsultanciesList => {
   const options = {
     method: 'GET',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: props.authToken,
+      authorization: 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2OCwiZXhwIjoxNjIwMTU2MDM4fQ.9FM5ZK1q9A9Pr9ksbDbfQp4pLRxEWoXvfeGhEyZlPZg',
     },
   };
   const response = await fetch(`${BASE}${CONSULTANCIES}`, options);
   const data = await response.json();
-  console.log(data);
-  return (
-    <ul>
-      {
-        data && data.map(el => (
-          <li key={el.id}>el.id</li>
-        ))
-      }
-    </ul>
-  );
+  try {
+    createConsultanciesList(data);
+  } catch (error) {
+    createConsultanciesList(data);
+  }
 };
 
-const mapStateToProps = state => {
-  const { authenticationReducer } = state;
-  return { authToken: authenticationReducer.authToken };
-};
-
-export default connect(mapStateToProps)(ConsultancyRequest);
+export default consultancyRequest;
