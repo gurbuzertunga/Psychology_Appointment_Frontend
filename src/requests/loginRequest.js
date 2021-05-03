@@ -1,4 +1,4 @@
-import { BASE } from '../services/appointmentapi';
+import { BASE, LOGIN } from '../services/appointmentapi';
 
 const loginRequest = async (createToken, userdata) => {
   const body = {
@@ -16,7 +16,7 @@ const loginRequest = async (createToken, userdata) => {
     },
     body: JSON.stringify(body),
   };
-  const response = await fetch(`${BASE}/auth/login`, options);
+  const response = await fetch(`${BASE}${LOGIN}`, options);
   const data = await response.json();
   const auth = {
     authToken: data.auth_token,
