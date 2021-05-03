@@ -11,7 +11,6 @@ const authenticationReducer = (state = defaultState, action) => {
   // debugger
   switch (action.type) {
     case CREATE_TOKEN:
-      console.log(action.payload, 'ddsadw');
       return { ...state, authToken: action.payload};
     case 'TEST':
       return { ...state, test: 'test worked', name: action.payload.name, email: action.payload.email };

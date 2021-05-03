@@ -13,7 +13,7 @@ const Login = ({ testAction, createToken }) => {
   };
   return (
     <div>
-      <h1>Welcome to Sign Up Page!</h1>
+      <h1>Welcome to Login Page!</h1>
       <LoginForm handleClick={handleSubmit} />
       <Link to="/signup">Create a new account</Link>
     </div>

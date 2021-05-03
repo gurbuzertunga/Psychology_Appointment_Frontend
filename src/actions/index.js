@@ -6,7 +6,7 @@ const CREATE_APPOINTMENTS_LIST = 'CREATE_APPOINTMENTS_LIST';
 const SET_APPOINTMENT = 'SET_APPOINTMENT';
 const REMOVE_APPOINTMENT = 'REMOVE_APPOINTMENT';
 
-const createToken = (data) => {
+const createToken = data => {
   return {
     type: CREATE_TOKEN,
     payload: data.authToken,

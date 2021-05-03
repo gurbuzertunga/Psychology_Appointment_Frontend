@@ -6,11 +6,9 @@ const defaultState = {
 };
 
 const consultanciesReducer = (state = defaultState, action) => {
-  console.log(action.type);
   switch (action.type) {
     case CREATE_CONSULTANCIES_LIST:
-      console.log(action.payload);
-      return { ...state, authToken: action.payload};
+      return { ...state, consultancies: action.payload};
     default:
       return state;
   }
