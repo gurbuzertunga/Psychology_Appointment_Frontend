@@ -10,4 +10,4 @@ const Navbar = () => (
 );
 
 const mapStateToProp = state => ({ authToken: state.authentication });
-export default connect(mapStateToProp, null)(Navbar);
+export default connect(mapStateToProp)(Navbar);

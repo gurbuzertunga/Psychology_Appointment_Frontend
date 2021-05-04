@@ -1,9 +1,11 @@
 /* eslint-disable */
-import { useSelector } from 'react-redux'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
 import { BASE, CONSULTANCIES } from '../services/appointmentapi';
+import { createConsultanciesList } from '../actions/index';
 
-const consultancyRequest = async (createConsultanciesList) => {
-  const auth = useSelector(state => state.authenticationReducer.authToken);
+const consultancyRequest = async ({ auth, createConsultanciesList }) => {
+  
   const options = {
     method: 'GET',
     headers: {
@@ -14,7 +16,6 @@ const consultancyRequest = async (createConsultanciesList) => {
   };
   const response = await fetch(`${BASE}${CONSULTANCIES}`, options);
   const data = await response.json();
-  console.log(createConsultanciesList(data));
   try {
     createConsultanciesList(data);
   } catch (error) {
@@ -22,4 +23,16 @@ const consultancyRequest = async (createConsultanciesList) => {
   }
 };
 
-export default consultancyRequest;
+
+
+consultancyRequest.propTypes = {
+  createConsultanciesList: PropTypes.func,
+};
+consultancyRequest.defaultProps = {
+  createConsultanciesList,
+};
+const mapStateToProps = state => ({
+  auth: state.authenticationReducer.authToken,
+})
+
+export default connect(mapStateToProps)(consultancyRequest);

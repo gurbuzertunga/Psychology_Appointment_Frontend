@@ -1,21 +1,28 @@
 /* eslint-disable */
-import React from 'react';
+import React, { Component } from 'react'
 import { connect, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import consultancyRequest from '../requests/consultanciesRequest';
 import { createConsultanciesList } from '../actions/index';
 
-const ConsultancyList = ({ createConsultanciesList }) => {
-  consultancyRequest(createConsultanciesList);
-  const consultancies = useSelector(state => state.consultanciesReducer.consultancies);
-  console.log(consultancies);
-  return (
-    <ul>
-      <li>my list</li>
-    </ul>
-  );
-};
-
+class ConsultancyList extends Component {
+  componentDidMount() {
+    consultancyRequest(this.props.createConsultanciesList);
+  }
+  render() {
+    const { consultancies } = this.props;
+    console.log(consultancies);
+    return (
+      <ul>
+        {
+          consultancies && consultancies.map(consultancy => (
+            <li key={consultancy.id}>{consultancy.area}</li>
+          ))
+        }
+      </ul>
+    );
+  }
+}
 ConsultancyList.propTypes = {
   createConsultanciesList: PropTypes.func,
 };
@@ -23,4 +30,10 @@ ConsultancyList.defaultProps = {
   createConsultanciesList,
 };
 
-export default connect(null, { createConsultanciesList })(ConsultancyList);
+const mapStateToProps = state => {
+  return {
+    consultancies: state.consultanciesReducer.consultancies,
+  };
+};
+
+export default connect(mapStateToProps, { createConsultanciesList })(ConsultancyList);
