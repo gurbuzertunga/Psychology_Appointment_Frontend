@@ -23,7 +23,6 @@ Login.propTypes = {
   createToken: PropTypes.func,
   testAction: PropTypes.func,
 };
-
 Login.defaultProps = {
   createToken,
   testAction,

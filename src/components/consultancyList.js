@@ -7,11 +7,10 @@ import { createConsultanciesList } from '../actions/index';
 
 class ConsultancyList extends Component {
   componentDidMount() {
-    consultancyRequest(this.props.createConsultanciesList);
+    consultancyRequest(this.props.createConsultanciesList, this.props.auth);
   }
   render() {
     const { consultancies } = this.props;
-    console.log(consultancies);
     return (
       <ul>
         {
@@ -25,6 +24,7 @@ class ConsultancyList extends Component {
 }
 ConsultancyList.propTypes = {
   createConsultanciesList: PropTypes.func,
+  auth: PropTypes.string.isRequired,
 };
 ConsultancyList.defaultProps = {
   createConsultanciesList,
@@ -33,6 +33,7 @@ ConsultancyList.defaultProps = {
 const mapStateToProps = state => {
   return {
     consultancies: state.consultanciesReducer.consultancies,
+    auth: state.authenticationReducer.authToken,
   };
 };
 

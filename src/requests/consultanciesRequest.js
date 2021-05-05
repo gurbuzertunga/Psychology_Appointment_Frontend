@@ -1,11 +1,8 @@
 /* eslint-disable */
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux'
 import { BASE, CONSULTANCIES } from '../services/appointmentapi';
-import { createConsultanciesList } from '../actions/index';
 
-const consultancyRequest = async ({ auth, createConsultanciesList }) => {
-  
+const consultancyRequest = async (createConsultanciesList, auth) => {
   const options = {
     method: 'GET',
     headers: {
@@ -23,16 +20,4 @@ const consultancyRequest = async ({ auth, createConsultanciesList }) => {
   }
 };
 
-
-
-consultancyRequest.propTypes = {
-  createConsultanciesList: PropTypes.func,
-};
-consultancyRequest.defaultProps = {
-  createConsultanciesList,
-};
-const mapStateToProps = state => ({
-  auth: state.authenticationReducer.authToken,
-})
-
-export default connect(mapStateToProps)(consultancyRequest);
+export default consultancyRequest;
