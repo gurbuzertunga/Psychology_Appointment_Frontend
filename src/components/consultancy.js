@@ -1,13 +1,25 @@
-/* eslint-disable */
-import React from 'react'
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const consultancy = ({consultancy, handleClick}) => {
-  console.log(consultancy);
+const Consultancy = ({ consultancy, handleClick, history }) => {
+  const { id, area } = consultancy;
+  const clickEffect = id => {
+    handleClick();
+    history.push(`/consultancies/${id}`);
+  };
+
   return (
-    <div>
-      
+    <div onClick={() => clickEffect(id)} onKeyPress={() => clickEffect(id)} role="presentation">
+      <h4>{area}</h4>
     </div>
-  )
-}
+  );
+};
 
-export default consultancy
+Consultancy.propTypes = {
+  consultancy: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+  history: PropTypes.objectOf(Object).isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
+
+export default withRouter(Consultancy);

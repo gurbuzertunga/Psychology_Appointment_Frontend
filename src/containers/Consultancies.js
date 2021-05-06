@@ -3,7 +3,7 @@ import ConsultancyList from '../components/consultancyList';
 import AppointmentForm from '../components/appointmentForm';
 
 const Consultancies = () => {
-  const handleClick = data => console.log(data);
+  const handleClick = data => console.log(data); // eslint-disable-line
   return (
     <div>
       <h1>Welcome to Consultancies Page</h1>
