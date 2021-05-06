@@ -4,10 +4,15 @@ import { connect, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import consultancyRequest from '../requests/consultanciesRequest';
 import { createConsultanciesList } from '../actions/index';
+import Consultancy from './consultancy';
 
 class ConsultancyList extends Component {
   componentDidMount() {
     consultancyRequest(this.props.createConsultanciesList, this.props.auth);
+  }
+
+  static handleClick() {
+
   }
   render() {
     const { consultancies } = this.props;
@@ -15,7 +20,7 @@ class ConsultancyList extends Component {
       <ul>
         {
           consultancies && consultancies.map(consultancy => (
-            <li key={consultancy.id}>{consultancy.area}</li>
+            <Consultancy key={consultancy.id} consultancy={consultancy} handleClick={this.props.handleClick} />
           ))
         }
       </ul>

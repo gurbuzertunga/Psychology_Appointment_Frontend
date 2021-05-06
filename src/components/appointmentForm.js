@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { setAppointment } from '../actions';
+import { createAppointmentsList } from '../actions';
 import makeAppointment from '../requests/makeAppointment';
 
 const data = {
@@ -10,13 +10,9 @@ const data = {
   consultancy_id: null,
 };
 
-const AppointmentForm = ({consultancies, appointment, setAppointment}) => {
+const AppointmentForm = ({consultancies, authToken, createAppointmentsList}) => {
 
   const [state,setState] = useState(data);
-  // const handleChange = data => {
-  //   console.log(data.target.value);
-  // };
-
   const handleInputChange  = e => {
     let id;
     consultancies.forEach(consultancy => {
@@ -31,9 +27,7 @@ const AppointmentForm = ({consultancies, appointment, setAppointment}) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setAppointment({...state}, console.log(appointment));
-    
-    makeAppointment(appointment);
+    makeAppointment({...state, authToken}, createAppointmentsList);
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -56,8 +50,8 @@ const AppointmentForm = ({consultancies, appointment, setAppointment}) => {
 const mapStateToProps = state => {
   return({
   consultancies: state.consultanciesReducer.consultancies,
-  appointment: state.appointmentsReducer.appointments,
+  authToken: state.authenticationReducer.authToken,
 });
 };
 
-export default connect(mapStateToProps,{ setAppointment })(AppointmentForm);
+export default connect(mapStateToProps,{ createAppointmentsList })(AppointmentForm);

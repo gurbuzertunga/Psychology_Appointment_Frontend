@@ -1,13 +1,13 @@
 /* eslint-disable */
-import { connect } from 'react-redux';
+import { createAppointmentsList } from '../actions';
 import { BASE, APPOINTMENTS } from '../services/appointmentapi';
 
-const makeAppointment = async appointment => {
-  // const { appointment } = props;
-  console.log(appointment);
+const makeAppointment = async (userData, createAppointmentsList) => {
+  const { time, problem, consultancy_id } = userData;
   const body = {
-    email: userdata.email,
-    password: userdata.password,
+    time: userData.time,
+    problem: userData.problem,
+    consultancy_id: userData.consultancy_id,
   };
   const options = { //eslint-disable-line
     method: 'POST',
@@ -17,20 +17,17 @@ const makeAppointment = async appointment => {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
+      authorization: userData.authToken,
     },
     body: JSON.stringify(body),
   };
   const response = await fetch(`${BASE}${APPOINTMENTS}`, options);
   const data = await response.json();
-  const auth = {
-    authToken: data.auth_token,
-  };
-  // try {
-  //   createToken(auth);
-  // } catch (error) {
-  //   createToken(error);
-  // }
+  try {
+    createAppointmentsList(data);
+  } catch (error) {
+    createAppointmentsList(data);
+  }
 };
-
 
 export default makeAppointment;

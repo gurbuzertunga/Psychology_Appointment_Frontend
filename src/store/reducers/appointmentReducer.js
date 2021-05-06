@@ -1,13 +1,15 @@
-import { SET_APPOINTMENT } from '../../actions/index';
+import { CREATE_APPOINTMENTS_LIST } from '../../actions/index';
 
 const defaultState = {
-  appointments: '',
+  appointments: [],
 };
 
 const appointmentsReducer = (state = defaultState, action) => {
+  let { appointments } = { ...state };
   switch (action.type) {
-    case SET_APPOINTMENT:
-      return { ...state, appointments: action.payload };
+    case CREATE_APPOINTMENTS_LIST:
+      appointments = [...appointments, action.payload];
+      return { ...state, appointments };
     default:
       return state;
   }
