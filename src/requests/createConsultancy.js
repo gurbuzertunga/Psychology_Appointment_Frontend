@@ -22,7 +22,6 @@ const CreateConsultancyRequest = async (userData, createConsultancy) => {
   };
   const response = await fetch(`${BASE}${CONSULTANCIES}`, options);
   const data = await response.json();
-  console.log(data);
   try {
     createConsultancy(data);
   } catch (error) {

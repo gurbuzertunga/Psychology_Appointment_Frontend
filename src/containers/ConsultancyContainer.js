@@ -3,14 +3,15 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { createAppointmentsList } from '../actions';
+import { setAppointment } from '../actions';
 import makeAppointment from '../requests/makeAppointment';
 
-const ConsultancyContainer = ({ consultancies, authToken, createAppointmentsList }) => {
+const ConsultancyContainer = ({ consultancies, authToken, setAppointment }) => {
   const { id } = useParams();
   const data = {
     time: '',
     problem: '',
+    date: '',
     consultancy_id: parseInt(id), // eslint-disable-line
   }
 
@@ -24,7 +25,7 @@ const ConsultancyContainer = ({ consultancies, authToken, createAppointmentsList
 
   const handleSubmit = e => {
     e.preventDefault();
-    makeAppointment({ ...state, authToken }, createAppointmentsList);
+    makeAppointment({ ...state, authToken }, setAppointment);
   }
   return (
     <div>
@@ -39,6 +40,7 @@ const ConsultancyContainer = ({ consultancies, authToken, createAppointmentsList
       }
       <form onSubmit={handleSubmit}>
         <input type="time" name="time" id="time" onChange={handleInputChange} />
+        <input type="date" name="date" id="date" onChange={handleInputChange } />
         <input type="text" name="problem" id="problem" onChange={handleInputChange} />
         <button type="submit">Submit</button>
       </form>
@@ -54,4 +56,4 @@ const mapStateToPros = state => ({
   authToken: state.authenticationReducer.authToken,
 });
 
-export default connect(mapStateToPros, { createAppointmentsList })(ConsultancyContainer);
+export default connect(mapStateToPros, { setAppointment })(ConsultancyContainer);

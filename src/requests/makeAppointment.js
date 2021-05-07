@@ -1,13 +1,13 @@
 /* eslint-disable */
-import { createAppointmentsList } from '../actions';
 import { BASE, APPOINTMENTS } from '../services/appointmentapi';
 
-const makeAppointment = async (userData, createAppointmentsList) => {
-  const { time, problem, consultancy_id } = userData;
+const makeAppointment = async (userData, setAppointment) => {
+  const { time, date, problem, consultancy_id, authToken } = userData;
   const body = {
-    time: userData.time,
-    problem: userData.problem,
-    consultancy_id: userData.consultancy_id,
+    time,
+    problem,
+    date,
+    consultancy_id,
   };
   const options = { //eslint-disable-line
     method: 'POST',
@@ -17,16 +17,16 @@ const makeAppointment = async (userData, createAppointmentsList) => {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      authorization: userData.authToken,
+      authorization: authToken,
     },
     body: JSON.stringify(body),
   };
   const response = await fetch(`${BASE}${APPOINTMENTS}`, options);
   const data = await response.json();
   try {
-    createAppointmentsList(data);
+    setAppointment(data);
   } catch (error) {
-    createAppointmentsList(data);
+    setAppointment(data);
   }
 };
 

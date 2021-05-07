@@ -1,16 +1,17 @@
 /* eslint-disable */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { createAppointmentsList } from '../actions';
+import { setAppointment } from '../actions';
 import makeAppointment from '../requests/makeAppointment';
 
 const data = {
   time: '',
   problem: '',
+  date: '',
   consultancy_id: null,
 };
 
-const AppointmentForm = ({consultancies, authToken, createAppointmentsList}) => {
+const AppointmentForm = ({consultancies, authToken, setAppointment}) => {
 
   const [state,setState] = useState(data);
   const handleInputChange  = e => {
@@ -27,11 +28,12 @@ const AppointmentForm = ({consultancies, authToken, createAppointmentsList}) => 
 
   const handleSubmit = e => {
     e.preventDefault();
-    makeAppointment({...state, authToken}, createAppointmentsList);
+    makeAppointment({...state, authToken}, setAppointment);
   };
   return (
     <form onSubmit={handleSubmit}>
       <input type="time" name="time" id="time" onChange={handleInputChange } />
+      <input type="date" name="date" id="date" onChange={handleInputChange } />
       <input type="text" name="problem" id="problem" onChange={handleInputChange } />
       <select name="consultancies" id="" onChange={handleInputChange}>
         return (
@@ -54,4 +56,4 @@ const mapStateToProps = state => {
 });
 };
 
-export default connect(mapStateToProps,{ createAppointmentsList })(AppointmentForm);
+export default connect(mapStateToProps,{ setAppointment })(AppointmentForm);

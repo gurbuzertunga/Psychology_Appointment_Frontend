@@ -8,7 +8,6 @@ const SET_APPOINTMENT = 'SET_APPOINTMENT';
 const REMOVE_APPOINTMENT = 'REMOVE_APPOINTMENT';
 
 const createToken = (data) => {
-  console.log(data);
   return {
     type: CREATE_TOKEN,
     payload: {token: data.authToken, isDoctor: data.isDoctor},
