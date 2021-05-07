@@ -6,12 +6,13 @@ const defaultState = {
   email: '',
   test: '',
   authToken: '',
+  isDoctor: false,
 };
 const authenticationReducer = (state = defaultState, action) => {
   // debugger
   switch (action.type) {
     case CREATE_TOKEN:
-      return { ...state, authToken: action.payload};
+      return { ...state, authToken: action.payload.token, isDoctor: action.payload.isDoctor};
     case 'TEST':
       return { ...state, test: 'test worked', name: action.payload.name, email: action.payload.email };
     default:

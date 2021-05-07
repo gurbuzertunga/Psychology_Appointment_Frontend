@@ -18,8 +18,10 @@ const loginRequest = async (createToken, userdata) => {
   };
   const response = await fetch(`${BASE}${LOGIN}`, options);
   const data = await response.json();
+  console.log(data);
   const auth = {
     authToken: data.auth_token,
+    isDoctor: data.doctor,
   };
   try {
     createToken(auth);

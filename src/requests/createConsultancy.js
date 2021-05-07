@@ -2,12 +2,11 @@
 import { createConsultancy } from '../actions';
 import { BASE, CONSULTANCIES } from '../services/appointmentapi';
 
-const makeAppointment = async (userData, createConsultancy) => {
+const CreateConsultancyRequest = async (userData, createConsultancy) => {
   const { area, details } = userData;
   const body = {
-    time: userData.time,
-    problem: userData.problem,
-    consultancy_id: userData.consultancy_id,
+    area: area,
+    details: details,
   };
   const options = { //eslint-disable-line
     method: 'POST',
@@ -21,13 +20,14 @@ const makeAppointment = async (userData, createConsultancy) => {
     },
     body: JSON.stringify(body),
   };
-  const response = await fetch(`${BASE}${APPOINTMENTS}`, options);
+  const response = await fetch(`${BASE}${CONSULTANCIES}`, options);
   const data = await response.json();
+  console.log(data);
   try {
-    createAppointmentsList(data);
+    createConsultancy(data);
   } catch (error) {
-    createAppointmentsList(data);
+    createConsultancy(data);
   }
 };
 
-export default makeAppointment;
+export default CreateConsultancyRequest;

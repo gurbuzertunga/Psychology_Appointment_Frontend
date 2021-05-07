@@ -22,6 +22,7 @@ const signUpRequest = async (createToken, userdata) => {
   const data = await response.json();
   const auth = {
     authToken: data.auth_token,
+    isDoctor: data.doctor,
   };
   try {
     createToken(auth);
