@@ -1,6 +1,7 @@
 /* eslint-disable */
 const CREATE_TOKEN = 'CREATE_TOKEN';
 const REMOVE_TOKEN = 'REMOVE_TOKEN';
+const CREATE_CONSULTANCY = 'CREATE_CONSULTANCY';
 const CREATE_CONSULTANCIES_LIST = 'CREATE_CONSULTANCIES_LIST';
 const CREATE_APPOINTMENTS_LIST = 'CREATE_APPOINTMENTS_LIST';
 const SET_APPOINTMENT = 'SET_APPOINTMENT';
@@ -22,6 +23,10 @@ const testAction = data => {
     payload: data,
   }
 };
+const createConsultancy = list => ({
+  type: CREATE_CONSULTANCY,
+  payload: list,
+});
 const createConsultanciesList = list => ({
   type: CREATE_CONSULTANCIES_LIST,
   payload: list,
@@ -41,6 +46,8 @@ const removeAppointment = id => ({
 export {
   CREATE_TOKEN,
   createToken,
+  CREATE_CONSULTANCY,
+  createConsultancy,
   CREATE_CONSULTANCIES_LIST,
   createConsultanciesList,
   CREATE_APPOINTMENTS_LIST,
