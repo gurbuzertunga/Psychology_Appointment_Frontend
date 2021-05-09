@@ -1,5 +1,4 @@
-/* eslint-disable */
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import appointmentsRequest from '../requests/appointmentsRequest';
@@ -8,20 +7,25 @@ import Appointment from './appointment';
 
 class AppointmentList extends Component {
   componentDidMount() {
-    appointmentsRequest(this.props.createAppointmentsList, this.props.auth);
+    const { createAppointmentsList, auth } = this.props;
+    appointmentsRequest(createAppointmentsList, auth);
   }
 
   static handleClick() {
 
   }
+
   render() {
-    const { appointments } = this.props;
-    console.log(appointments);
+    const { appointments, handleClick } = this.props;
     return (
       <ul>
         {
           appointments && appointments.map(appointment => (
-            <Appointment key={appointment.id} appointment={appointment} handleClick={this.props.handleClick} />
+            <Appointment
+              key={appointment.id}
+              appointment={appointment}
+              handleClick={handleClick}
+            />
           ))
         }
       </ul>
@@ -31,16 +35,17 @@ class AppointmentList extends Component {
 AppointmentList.propTypes = {
   createAppointmentsList: PropTypes.func,
   auth: PropTypes.string.isRequired,
+  appointments: PropTypes.arrayOf(Array),
+  handleClick: PropTypes.func.isRequired,
 };
 AppointmentList.defaultProps = {
   createAppointmentsList,
+  appointments: [],
 };
 
-const mapStateToProps = state => {
-  return {
-    appointments: state.appointmentsReducer.appointments,
-    auth: state.authenticationReducer.authToken,
-  };
-};
+const mapStateToProps = state => ({
+  appointments: state.appointmentsReducer.appointments,
+  auth: state.authenticationReducer.authToken,
+});
 
 export default connect(mapStateToProps, { createAppointmentsList })(AppointmentList);

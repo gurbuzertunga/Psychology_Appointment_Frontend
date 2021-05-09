@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import ConsultancyList from '../components/consultancyList';
 import AppointmentForm from '../components/appointmentForm';
 
 const Consultancies = props => {
-  const { authToken } = props; // eslint-disable-line
+  const { authToken } = props;
   console.log(authToken);
   if (!authToken) {
     return <Redirect to="/" />;
@@ -20,6 +21,12 @@ const Consultancies = props => {
   );
 };
 
+Consultancies.propTypes = {
+  authToken: PropTypes.string,
+};
+Consultancies.defaultProps = {
+  authToken: '',
+};
 const mapStateToProps = state => ({
   authToken: state.authenticationReducer.authToken,
 });

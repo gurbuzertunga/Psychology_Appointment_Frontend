@@ -1,5 +1,3 @@
-/* eslint-disable */
-import { useSelector } from 'react-redux'
 import { BASE, CONSULTANCIES } from '../services/appointmentapi';
 
 const consultancyRequest = async (createConsultanciesList, auth) => {

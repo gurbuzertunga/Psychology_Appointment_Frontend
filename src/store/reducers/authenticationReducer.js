@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { CREATE_TOKEN, REMOVE_TOKEN } from '../../actions/index';
 
 const defaultState = {
@@ -13,7 +12,9 @@ const authenticationReducer = (state = defaultState, action) => {
     case CREATE_TOKEN:
       return { ...state, authToken: action.payload.token, isDoctor: action.payload.isDoctor };
     case 'TEST':
-      return { ...state, test: 'test worked', name: action.payload.name, email: action.payload.email };
+      return {
+        ...state, test: 'test worked', name: action.payload.name, email: action.payload.email,
+      };
     case REMOVE_TOKEN:
       console.log(action);
       return defaultState;

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useParams, Redirect } from 'react-router-dom';
@@ -16,20 +15,20 @@ const ConsultancyContainer = ({ consultancies, authToken, setAppointment }) => {
     problem: '',
     date: '',
     consultancy_id: parseInt(id), // eslint-disable-line
-  }
+  };
 
   const [state, setState] = useState(data);
 
   const handleInputChange = e => {
-    const appointment_req = { ...state };
-    appointment_req[e.target.name] = e.target.value;
-    setState(appointment_req);
-  }
+    const appointmentReq = { ...state };
+    appointmentReq[e.target.name] = e.target.value;
+    setState(appointmentReq);
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
     makeAppointment({ ...state, authToken }, setAppointment);
-  }
+  };
   return (
     <div>
       <h1>Consultancy Details</h1>
@@ -43,7 +42,7 @@ const ConsultancyContainer = ({ consultancies, authToken, setAppointment }) => {
       }
       <form onSubmit={handleSubmit}>
         <input type="time" name="time" id="time" onChange={handleInputChange} />
-        <input type="date" name="date" id="date" onChange={handleInputChange } />
+        <input type="date" name="date" id="date" onChange={handleInputChange} />
         <input type="text" name="problem" id="problem" onChange={handleInputChange} />
         <button type="submit">Submit</button>
       </form>
@@ -52,6 +51,11 @@ const ConsultancyContainer = ({ consultancies, authToken, setAppointment }) => {
 };
 ConsultancyContainer.propTypes = {
   consultancies: PropTypes.arrayOf(Object).isRequired,
+  authToken: PropTypes.string,
+  setAppointment: PropTypes.func.isRequired,
+};
+ConsultancyContainer.defaultProps = {
+  authToken: '',
 };
 
 const mapStateToPros = state => ({

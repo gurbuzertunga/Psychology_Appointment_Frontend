@@ -1,4 +1,3 @@
-/* eslint-disable */
 const CREATE_TOKEN = 'CREATE_TOKEN';
 const REMOVE_TOKEN = 'REMOVE_TOKEN';
 const CREATE_CONSULTANCY = 'CREATE_CONSULTANCY';
@@ -7,25 +6,21 @@ const CREATE_APPOINTMENTS_LIST = 'CREATE_APPOINTMENTS_LIST';
 const SET_APPOINTMENT = 'SET_APPOINTMENT';
 const REMOVE_APPOINTMENT = 'REMOVE_APPOINTMENT';
 
-const createToken = (data) => {
-  return {
-    type: CREATE_TOKEN,
-    payload: {token: data.authToken, isDoctor: data.isDoctor},
-  }
-}
+const createToken = data => ({
+  type: CREATE_TOKEN,
+  payload: { token: data.authToken, isDoctor: data.isDoctor },
+});
 
 const removeToken = () => {
   console.log('remove token');
- return {
+  return {
     type: REMOVE_TOKEN,
   };
 };
-const testAction = data => {
-  return {
-    type: 'TEST',
-    payload: data,
-  }
-};
+const testAction = data => ({
+  type: 'TEST',
+  payload: data,
+});
 const createConsultancy = list => ({
   type: CREATE_CONSULTANCY,
   payload: list,

@@ -1,6 +1,5 @@
-/* eslint-disable */
-import React, { Component } from 'react'
-import { connect, useSelector } from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import consultancyRequest from '../requests/consultanciesRequest';
 import { createConsultanciesList } from '../actions/index';
@@ -8,19 +7,21 @@ import Consultancy from './consultancy';
 
 class ConsultancyList extends Component {
   componentDidMount() {
-    consultancyRequest(this.props.createConsultanciesList, this.props.auth);
+    const { createConsultanciesList, auth } = this.props;
+    consultancyRequest(createConsultanciesList, auth);
   }
 
   static handleClick() {
 
   }
+
   render() {
-    const { consultancies } = this.props;
+    const { consultancies, handleClick } = this.props;
     return (
       <ul>
         {
           consultancies && consultancies.map(consultancy => (
-            <Consultancy key={consultancy.id} consultancy={consultancy} handleClick={this.props.handleClick} />
+            <Consultancy key={consultancy.id} consultancy={consultancy} handleClick={handleClick} />
           ))
         }
       </ul>
@@ -30,16 +31,17 @@ class ConsultancyList extends Component {
 ConsultancyList.propTypes = {
   createConsultanciesList: PropTypes.func,
   auth: PropTypes.string.isRequired,
+  consultancies: PropTypes.arrayOf(Array),
+  handleClick: PropTypes.func.isRequired,
 };
 ConsultancyList.defaultProps = {
   createConsultanciesList,
+  consultancies: [],
 };
 
-const mapStateToProps = state => {
-  return {
-    consultancies: state.consultanciesReducer.consultancies,
-    auth: state.authenticationReducer.authToken,
-  };
-};
+const mapStateToProps = state => ({
+  consultancies: state.consultanciesReducer.consultancies,
+  auth: state.authenticationReducer.authToken,
+});
 
 export default connect(mapStateToProps, { createConsultanciesList })(ConsultancyList);

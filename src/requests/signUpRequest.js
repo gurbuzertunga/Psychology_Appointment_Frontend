@@ -7,7 +7,7 @@ const signUpRequest = async (createToken, userdata) => {
     password: userdata.password,
     password_confirmation: userdata.passwordConfirm,
   };
-  const options = { //eslint-disable-line
+  const options = {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',

@@ -1,12 +1,10 @@
-/* eslint-disable */
-import { createConsultancy } from '../actions';
 import { BASE, CONSULTANCIES } from '../services/appointmentapi';
 
 const CreateConsultancyRequest = async (userData, createConsultancy) => {
   const { area, details } = userData;
   const body = {
-    area: area,
-    details: details,
+    area,
+    details,
   };
   const options = { //eslint-disable-line
     method: 'POST',

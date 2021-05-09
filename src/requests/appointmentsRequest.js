@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { APPOINTMENTS, BASE } from '../services/appointmentapi';
 
 const appointmentsRequest = async (createAppointmentsList, auth) => {

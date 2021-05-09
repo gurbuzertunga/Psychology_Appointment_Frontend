@@ -21,7 +21,7 @@ const Navbar = props => {
       <div>
         <Link to="/appointments">Appointments</Link>
         <Link to="/admin">Admin Area</Link>
-        <Link to="/signout">signout</Link>
+        <button type="submit" onClick={handleSubmit}>Signout</button>
       </div>
     );
   } return (

@@ -5,7 +5,7 @@ const loginRequest = async (createToken, userdata) => {
     email: userdata.email,
     password: userdata.password,
   };
-  const options = { //eslint-disable-line
+  const options = {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',
