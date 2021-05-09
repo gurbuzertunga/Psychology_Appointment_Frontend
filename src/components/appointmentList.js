@@ -37,7 +37,7 @@ AppointmentList.defaultProps = {
 
 const mapStateToProps = state => {
   return {
-    appointments: state.appointmentsReducer,
+    appointments: state.appointmentsReducer.appointments,
     auth: state.authenticationReducer.authToken,
   };
 };

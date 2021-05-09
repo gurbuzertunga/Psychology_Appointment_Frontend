@@ -1,15 +1,19 @@
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import SignUpForm from '../components/signUpForm';
 import signUpRequest from '../requests/signUpRequest';
 import { createToken, testAction } from '../actions/index';
 
 const SignUp = ({ testAction, createToken }) => {
+  const history = useHistory();
   const handleSubmit = data => {
     const { name, email } = data;
     testAction({ name, email });
     signUpRequest(createToken, data);
+    setTimeout(() => {
+      history.push('/consultancies');
+    }, 2000);
   };
   return (
     <div>

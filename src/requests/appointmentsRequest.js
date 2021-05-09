@@ -12,7 +12,6 @@ const appointmentsRequest = async (createAppointmentsList, auth) => {
   };
   const response = await fetch(`${BASE}${APPOINTMENTS}`, options);
   const data = await response.json();
-  console.log(data);
   try {
     createAppointmentsList(data);
   } catch (error) {

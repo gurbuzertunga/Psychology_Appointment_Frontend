@@ -9,11 +9,9 @@ const appointmentsReducer = (state = defaultState, action) => {
   switch (action.type) {
     case CREATE_APPOINTMENTS_LIST:
       appointments = action.payload;
-      console.log(appointments);
       return { ...state, appointments };
     case SET_APPOINTMENT:
       appointments = [...appointments, action.payload];
-      console.log(appointments);
       return { ...state, appointments };
     default:
       return state;

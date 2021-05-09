@@ -6,7 +6,7 @@ const defaultState = {
   email: '',
   test: '',
   authToken: '',
-  isDoctor: false,
+  isDoctor: null,
 };
 const authenticationReducer = (state = defaultState, action) => {
   // debugger

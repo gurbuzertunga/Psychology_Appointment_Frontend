@@ -1,15 +1,22 @@
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import LoginForm from '../components/loginForm';
 import loginRequest from '../requests/loginRequest';
 import { createToken, testAction } from '../actions/index';
 
-const Login = ({ testAction, createToken }) => {
-  const handleSubmit = data => {
+const Login = props => {
+  const { testAction, createToken } = props;
+  const history = useHistory(); // eslint-disable-line
+  const handleSubmit = async data => {
     const { name, email } = data;
     testAction({ name, email });
-    loginRequest(createToken, data);
+    console.log(loginRequest(createToken, data));
+    const isDoctor = await loginRequest(createToken, data);
+    console.log(isDoctor, 'isDoctor');
+    setTimeout(() => {
+      isDoctor ? history.push('/admin') : history.push('/consultancies'); // eslint-disable-line
+    }, 2000);
   };
   return (
     <div>
@@ -22,9 +29,13 @@ const Login = ({ testAction, createToken }) => {
 Login.propTypes = {
   createToken: PropTypes.func,
   testAction: PropTypes.func,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 Login.defaultProps = {
   createToken,
   testAction,
 };
+
 export default connect(null, { createToken, testAction })(Login);

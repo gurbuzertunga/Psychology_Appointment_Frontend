@@ -27,5 +27,8 @@ const loginRequest = async (createToken, userdata) => {
   } catch (error) {
     createToken(error);
   }
+  return (
+    data.doctor
+  );
 };
 export default loginRequest;
