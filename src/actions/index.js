@@ -14,9 +14,12 @@ const createToken = (data) => {
   }
 }
 
-const removeToken = () => ({
-  type: REMOVE_TOKEN,
-});
+const removeToken = () => {
+  console.log('remove token');
+ return {
+    type: REMOVE_TOKEN,
+  };
+};
 const testAction = data => {
   return {
     type: 'TEST',
@@ -46,6 +49,8 @@ const removeAppointment = id => ({
 export {
   CREATE_TOKEN,
   createToken,
+  removeToken,
+  REMOVE_TOKEN,
   CREATE_CONSULTANCY,
   createConsultancy,
   CREATE_CONSULTANCIES_LIST,

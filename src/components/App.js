@@ -3,6 +3,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import Home from '../containers/Home';
 import NavBar from '../containers/NavBar';
 import SignUp from '../containers/SignUp';
 import Login from '../containers/Login';
@@ -18,6 +19,7 @@ function App() {
         <h1>Hello World!</h1>
         <NavBar />
         <Switch>
+          <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/auth/login" component={Login} />
           <Route exact path="/appointments" component={Appointments} />
