@@ -2,6 +2,7 @@
 import { APPOINTMENTS, BASE } from '../services/appointmentapi';
 
 const appointmentsRequest = async (createAppointmentsList, auth) => {
+  console.log(auth);
   const options = {
     method: 'GET',
     headers: {
@@ -12,6 +13,7 @@ const appointmentsRequest = async (createAppointmentsList, auth) => {
   };
   const response = await fetch(`${BASE}${APPOINTMENTS}`, options);
   const data = await response.json();
+  console.log(data);
   try {
     createAppointmentsList(data);
   } catch (error) {

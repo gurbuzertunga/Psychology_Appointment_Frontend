@@ -11,12 +11,10 @@ const Login = props => {
   const handleSubmit = async data => {
     const { name, email } = data;
     testAction({ name, email });
-    console.log(loginRequest(createToken, data));
     const isDoctor = await loginRequest(createToken, data);
-    console.log(isDoctor, 'isDoctor');
     setTimeout(() => {
       isDoctor ? history.push('/admin') : history.push('/consultancies'); // eslint-disable-line
-    }, 2000);
+    }, 4000);
   };
   return (
     <div>

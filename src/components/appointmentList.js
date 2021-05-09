@@ -16,6 +16,7 @@ class AppointmentList extends Component {
   }
   render() {
     const { appointments } = this.props;
+    console.log(appointments);
     return (
       <ul>
         {

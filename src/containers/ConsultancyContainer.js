@@ -1,13 +1,16 @@
 /* eslint-disable */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { setAppointment } from '../actions';
 import makeAppointment from '../requests/makeAppointment';
 
 const ConsultancyContainer = ({ consultancies, authToken, setAppointment }) => {
   const { id } = useParams();
+  if (!authToken) {
+    return <Redirect to="/" />;
+  }
   const data = {
     time: '',
     problem: '',
