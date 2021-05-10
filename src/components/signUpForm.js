@@ -37,28 +37,12 @@ const SignUpForm = ({ handleClick }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">
-        Username:
-        {' '}
-        <input type="text" id="name" value={data.name} onChange={handleChange} />
-      </label>
-      <label htmlFor="email">
-        E-Mail:
-        {' '}
-        <input type="email" id="email" value={data.email} onChange={handleChange} />
-      </label>
-      <label htmlFor="password">
-        Password:
-        {' '}
-        <input type="text" id="password" value={data.password} onChange={handleChange} />
-      </label>
-      <label htmlFor="passwordConfirm">
-        Password Confirmation:
-        {' '}
-        <input type="text" id="passwordConfirm" value={data.passwordConfirm} onChange={handleChange} />
-      </label>
-      <input type="submit" value="submit" />
+    <form className="flex flex-col border border-gray-300 rounded py-4 mx-auto w-5/12" onSubmit={handleSubmit}>
+      <input className="focus:outline-none focus:ring focus:border-blue-500 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" placeholder="Name" type="text" id="name" value={data.name} onChange={handleChange} />
+      <input className="focus:outline-none focus:ring focus:border-blue-500 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" placeholder="Email" type="email" id="email" value={data.email} onChange={handleChange} />
+      <input className="focus:outline-none focus:ring focus:border-blue-500 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" placeholder="Password" type="password" id="password" value={data.password} onChange={handleChange} />
+      <input className="focus:outline-none focus:ring focus:border-blue-500 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" placeholder="Password Confirmation" type="password" id="passwordConfirm" value={data.passwordConfirm} onChange={handleChange} />
+      <input className="focus:outline-none focus:ring focus:border-blue-500 bg-transparent bolder text-white mr-2 border w-4/12 place-self-center border-gray-300 rounded" type="submit" value="Submit" />
     </form>
   );
 };

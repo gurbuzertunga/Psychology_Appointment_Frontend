@@ -3,10 +3,10 @@ import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import LoginForm from '../components/loginForm';
 import loginRequest from '../requests/loginRequest';
-import { createToken, testAction } from '../actions/index';
+import { createToken, testAction, closeModal } from '../actions/index';
 
 const Login = props => {
-  const { testAction, createToken } = props;
+  const { testAction, createToken, closeModal } = props;
   const history = useHistory(); // eslint-disable-line
   const handleSubmit = async data => {
     const { name, email } = data;
@@ -15,18 +15,20 @@ const Login = props => {
     setTimeout(() => {
       isDoctor ? history.push('/admin') : history.push('/consultancies'); // eslint-disable-line
     }, 4000);
+    closeModal();
   };
   return (
-    <div>
-      <h1>Welcome to Login Page!</h1>
+    <div className="flex flex-col">
+      <h1 className="text-center my-4 text-white text-2xl font-extrabold">Login</h1>
       <LoginForm handleClick={handleSubmit} />
-      <Link to="/signup">Create a new account</Link>
+      <Link className="text-center my-4 text-white" to="/signup">Create a new account</Link>
     </div>
   );
 };
 Login.propTypes = {
   createToken: PropTypes.func,
   testAction: PropTypes.func,
+  closeModal: PropTypes.func,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
@@ -34,6 +36,7 @@ Login.propTypes = {
 Login.defaultProps = {
   createToken,
   testAction,
+  closeModal,
 };
 
-export default connect(null, { createToken, testAction })(Login);
+export default connect(null, { createToken, testAction, closeModal })(Login);

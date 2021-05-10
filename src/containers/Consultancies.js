@@ -13,8 +13,8 @@ const Consultancies = props => {
   }
   const handleClick = data => console.log(data); // eslint-disable-line
   return (
-    <div>
-      <h1>Welcome to Consultancies Page</h1>
+    <div className="flex flex-col">
+      <h1 className="text-center my-4 text-white text-2xl font-extrabold">List of Consultancy areas we can help you</h1>
       <ConsultancyList handleClick={handleClick} />
       <AppointmentForm />
     </div>

@@ -30,15 +30,16 @@ const AppointmentForm = ({ consultancies, authToken, setAppointment }) => {
     makeAppointment({ ...state, authToken }, setAppointment);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="time" name="time" id="time" onChange={handleInputChange} />
-      <input type="date" name="date" id="date" onChange={handleInputChange} />
-      <input type="text" name="problem" id="problem" onChange={handleInputChange} />
-      <select name="consultancies" id="" onChange={handleInputChange}>
+    <form className="flex flex-col border border-gray-300 rounded py-4 mx-auto w-5/12" onSubmit={handleSubmit}>
+      <input className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" type="time" name="time" id="time" onChange={handleInputChange} />
+      <input className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" type="date" name="date" id="date" onChange={handleInputChange} />
+      <input className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" type="text" name="problem" id="problem" onChange={handleInputChange} />
+      <select className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" name="consultancies" id="" onChange={handleInputChange}>
         return (
         {
           consultancies && consultancies.map(consultancy => (
             <option
+              className="appearance-none focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded"
               key={consultancy.id}
               id={consultancy.id}
               value={consultancy.area}
