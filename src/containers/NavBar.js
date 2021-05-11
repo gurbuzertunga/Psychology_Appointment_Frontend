@@ -12,9 +12,9 @@ const Navbar = props => {
   if (isDoctor === false) {
     return (
       <div className="text-white bolder self-end">
-        <Link className="mr-2" to="/consultancies">Consultancies</Link>
-        <Link className="mr-2" to="/mypage">my page</Link>
-        <button className="bg-transparent bolder text-white mr-2" type="submit" onClick={handleSubmit}>Signout</button>
+        <Link className="mr-4 font-light" to="/consultancies">Consultancies</Link>
+        <Link className="mr-4 font-light" to="/mypage">My Appointments</Link>
+        <button className="bg-transparent bolder mr-4 font-light" type="submit" onClick={handleSubmit}>Sign Out</button>
       </div>
     );
   } else if (isDoctor === true) { // eslint-disable-line
@@ -26,9 +26,9 @@ const Navbar = props => {
       </div>
     );
   } return (
-    <div className="text-white bolder self-end">
-      <div onClick={() => openModal('login')} onKeyDown={openModal} role="presentation">Login</div>
-      <div onClick={() => openModal('signup')} onKeyDown={openModal} role="presentation">Sign Up</div>
+    <div className="text-white bolder self-end flex mt-4 mr-4">
+      <button className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder text-white mr-4" type="submit" onClick={() => openModal('login')}>Login</button>
+      <button className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder text-white mr-4" type="submit" onClick={() => openModal('signup')}>Sign Up</button>
     </div>
   );
 };
