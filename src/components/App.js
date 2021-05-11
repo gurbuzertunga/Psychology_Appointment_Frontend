@@ -1,5 +1,4 @@
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
 } from 'react-router-dom';
@@ -15,36 +14,34 @@ import Consultancies from '../containers/Consultancies';
 import AdminPage from '../containers/AdminPage';
 import ConsultancyContainer from '../containers/ConsultancyContainer';
 import Modal from './modal/modal';
+import NotFound from '../containers/404';
+import Loading from './loading';
 
-function App({ modalIsOpen, loginOrSignup }) {
-  return (
-    <>
-      {
-        modalIsOpen
-        && (
-          <Modal>
-            { loginOrSignup === 'login' ? <Login /> : <SignUp />}
-          </Modal>
-        )
-      }
-      <Router>
-        <div className="App flex flex-col">
-          <NavBar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/mypage" component={MyPage} />
-            {/* <Route exact path="/signup" component={SignUp} /> */}
-            {/* <Route exact path="/auth/login" component={Login} /> */}
-            <Route exact path="/appointments" component={Appointments} />
-            <Route exact path="/consultancies" component={Consultancies} />
-            <Route exact path="/admin" component={AdminPage} />
-            <Route path="/consultancies/:id" component={ConsultancyContainer} />
-          </Switch>
-        </div>
-      </Router>
-    </>
-  );
-}
+const App = ({ modalIsOpen, loginOrSignup }) => (
+  <>
+    {
+      modalIsOpen
+      && (
+        <Modal>
+          { loginOrSignup === 'login' ? <Login /> : <SignUp />}
+        </Modal>
+      )
+    }
+    <div className="App flex flex-col">
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/mypage" component={MyPage} />
+        <Route exact path="/appointments" component={Appointments} />
+        <Route exact path="/consultancies" component={Consultancies} />
+        <Route exact path="/admin" component={AdminPage} />
+        <Route path="/consultancies/:id" component={ConsultancyContainer} />
+        <Route component={NotFound} />
+        <Route component={Loading} />
+      </Switch>
+    </div>
+  </>
+);
 
 App.propTypes = {
   modalIsOpen: PropTypes.bool,

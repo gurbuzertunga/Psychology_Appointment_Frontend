@@ -27,8 +27,6 @@ const Navbar = props => {
     );
   } return (
     <div className="text-white bolder self-end">
-      {/* <Link className="mr-2" to="/signup">Sign up</Link> */}
-      {/* <Link className="mr-2" to="/auth/login">Login</Link> */}
       <div onClick={() => openModal('login')} onKeyDown={openModal} role="presentation">Login</div>
       <div onClick={() => openModal('signup')} onKeyDown={openModal} role="presentation">Sign Up</div>
     </div>
