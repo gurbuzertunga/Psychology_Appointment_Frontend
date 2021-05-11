@@ -14,7 +14,7 @@ class AppointmentList extends Component {
   render() {
     const { appointments } = this.props;
     return (
-      <ul>
+      <div className="flex mt-16">
         {
           appointments && appointments.map(appointment => (
             <Appointment
@@ -23,7 +23,7 @@ class AppointmentList extends Component {
             />
           ))
         }
-      </ul>
+      </div>
     );
   }
 }

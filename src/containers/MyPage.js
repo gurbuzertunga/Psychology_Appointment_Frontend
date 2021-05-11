@@ -10,8 +10,8 @@ const MyPage = props => {
     return <Redirect to="/" />;
   }
   return (
-    <div>
-      <h1>Welcome to My Page</h1>
+    <div className="flex flex-col items-center justify-evenly">
+      <h1 className="text-white text-2xl font-bold mt-4">My Appointments</h1>
       <AppointmentList />
     </div>
   );

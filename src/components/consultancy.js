@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { SiReplDotIt } from 'react-icons/all';
 
 const Consultancy = ({ consultancy, handleClick, history }) => {
   const { id, area } = consultancy;
@@ -11,7 +12,10 @@ const Consultancy = ({ consultancy, handleClick, history }) => {
 
   return (
     <div onClick={() => clickEffect(id)} onKeyPress={() => clickEffect(id)} role="presentation">
-      <h4>{area}</h4>
+      <h4 className="flex items-center text-white font-light cursor-pointer">
+        <SiReplDotIt className="mr-4 text-white" />
+        {area}
+      </h4>
     </div>
   );
 };

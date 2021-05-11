@@ -11,7 +11,7 @@ const Navbar = props => {
   };
   if (isDoctor === false) {
     return (
-      <div className="text-white bolder self-end">
+      <div className="text-white bolder self-end mt-4 mr-4">
         <Link className="mr-4 font-light" to="/consultancies">Consultancies</Link>
         <Link className="mr-4 font-light" to="/mypage">My Appointments</Link>
         <button className="bg-transparent bolder mr-4 font-light" type="submit" onClick={handleSubmit}>Sign Out</button>
@@ -19,10 +19,10 @@ const Navbar = props => {
     );
   } else if (isDoctor === true) { // eslint-disable-line
     return (
-      <div className="text-white bolder self-end">
-        <Link className="mr-2" to="/appointments">Appointments</Link>
-        <Link className="mr-2 bg-transparent" to="/admin">Admin Area</Link>
-        <button className="bg-transparent bolder text-white mr-2" type="submit" onClick={handleSubmit}>Signout</button>
+      <div className="text-white bolder self-end mt-4 mr-4">
+        <Link className="mr-4 font-light" to="/appointments">Appointments</Link>
+        <Link className="mr-4 font-light" to="/admin">Admin Area</Link>
+        <button className="bg-transparent bolder mr-4 font-light" type="submit" onClick={handleSubmit}>Signout</button>
       </div>
     );
   } return (
