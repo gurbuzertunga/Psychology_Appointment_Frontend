@@ -8,7 +8,8 @@ AOS.init({
   delay: 200, // values from 0 to 3000, with step 50ms
   duration: 400, // values from 0 to 3000, with step 50ms
 });
-const Appointment = ({ appointment }) => {
+const Appointment = ({ appointment, user }) => {
+  console.log(user);
   const {
     time,
     problem,
@@ -25,13 +26,21 @@ const Appointment = ({ appointment }) => {
         <h2 className="text-white font-light mt-2 p-2 w-max">Time:</h2>
         <h2 className="text-white font-light mt-2 p-2 w-max">{time}</h2>
       </div>
-      <h3 className="text-white font-light mt-2 p-2">{problem}</h3>
+      <div className="flex">
+        <h2 className="text-white font-light mt-2 p-2 w-max">Problem:</h2>
+        <h2 className="text-white font-light mt-2 p-2">{problem}</h2>
+      </div>
+      <div className="flex">
+        <h2 className="text-white font-light mt-2 p-2 w-max">Patient:</h2>
+        <h2 className="text-white font-light mt-2 p-2">{user}</h2>
+      </div>
     </div>
   );
 };
 
 Appointment.propTypes = {
   appointment: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+  user: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };
 
 export default withRouter(Appointment);

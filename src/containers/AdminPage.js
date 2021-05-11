@@ -10,8 +10,8 @@ const AdminPage = props => {
     return <Redirect to="/" />;
   }
   return (
-    <div>
-      <h1>Admin Page</h1>
+    <div className="flex flex-col justify-evenly items-center mt-16">
+      <h1 className="text-white text-2xl font-bold mb-4">Admin Page</h1>
       <ConsultancyForm />
     </div>
   );

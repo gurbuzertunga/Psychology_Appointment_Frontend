@@ -22,10 +22,10 @@ const ConsultancyForm = ({ authToken, createConsultancy }) => {
     CreateConsultancyRequest({ ...state, authToken }, createConsultancy);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="area" id="area" onChange={handleInputChange} />
-      <input type="textarea" name="details" id="details" onChange={handleInputChange} />
-      <button type="submit">Submit</button>
+    <form className="flex flex-col" onSubmit={handleSubmit}>
+      <input placeholder="Area" className="font-light focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" type="text" name="area" id="area" onChange={handleInputChange} />
+      <textarea placeholder="Details" className="font-light focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" name="details" id="details" onChange={handleInputChange} />
+      <button className="text-white font-light" type="submit">Submit</button>
     </form>
   );
 };
