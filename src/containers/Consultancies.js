@@ -7,7 +7,6 @@ import AppointmentForm from '../components/appointmentForm';
 
 const Consultancies = props => {
   const { authToken } = props;
-  console.log('consultancies');
   if (!authToken) {
     return <Redirect to="/" />;
   }

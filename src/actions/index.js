@@ -2,6 +2,7 @@ const OPEN_MODAL = 'OPEN_MODAL';
 const CLOSE_MODAL = 'CLOSE_MODAL';
 const IS_LOADING_STARTED = 'IS_LOADING_STARTED';
 const CREATE_TOKEN = 'CREATE_TOKEN';
+const CREATE_USER = 'CREATE_USER';
 const REMOVE_TOKEN = 'REMOVE_TOKEN';
 const CREATE_CONSULTANCY = 'CREATE_CONSULTANCY';
 const CREATE_CONSULTANCIES_LIST = 'CREATE_CONSULTANCIES_LIST';
@@ -27,14 +28,11 @@ const isLoadingStarted = () => ({
   type: IS_LOADING_STARTED,
 });
 
-const removeToken = () => {
-  console.log('remove token');
-  return {
-    type: REMOVE_TOKEN,
-  };
-};
-const testAction = data => ({
-  type: 'TEST',
+const removeToken = () => ({
+  type: REMOVE_TOKEN,
+});
+const createUser = data => ({
+  type: CREATE_USER,
   payload: data,
 });
 const createConsultancy = list => ({
@@ -66,6 +64,8 @@ export {
   IS_LOADING_STARTED,
   CREATE_TOKEN,
   createToken,
+  CREATE_USER,
+  createUser,
   removeToken,
   REMOVE_TOKEN,
   CREATE_CONSULTANCY,
@@ -78,5 +78,4 @@ export {
   setAppointment,
   REMOVE_APPOINTMENT,
   removeAppointment,
-  testAction,
 };

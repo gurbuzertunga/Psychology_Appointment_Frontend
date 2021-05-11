@@ -5,14 +5,14 @@ import SignUpForm from '../components/signUpForm';
 import signUpRequest from '../requests/signUpRequest';
 import {
   createToken,
-  testAction,
+  createUser,
   closeModal,
   openModal,
 } from '../actions/index';
 
 const SignUp = (
   {
-    testAction,
+    createUser,
     createToken,
     closeModal,
     openModal,
@@ -21,7 +21,7 @@ const SignUp = (
   const history = useHistory();
   const handleSubmit = data => {
     const { name, email } = data;
-    testAction({ name, email });
+    createUser({ name, email });
     signUpRequest(createToken, data);
     setTimeout(() => {
       history.push('/consultancies');
@@ -38,20 +38,20 @@ const SignUp = (
 };
 SignUp.propTypes = {
   createToken: PropTypes.func,
-  testAction: PropTypes.func,
+  createUser: PropTypes.func,
   closeModal: PropTypes.func,
   openModal: PropTypes.func,
 };
 
 SignUp.defaultProps = {
   createToken,
-  testAction,
+  createUser,
   closeModal,
   openModal,
 };
 export default connect(null, {
   createToken,
-  testAction,
+  createUser,
   closeModal,
   openModal,
 })(SignUp);

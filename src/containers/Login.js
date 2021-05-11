@@ -5,7 +5,7 @@ import LoginForm from '../components/loginForm';
 import loginRequest from '../requests/loginRequest';
 import {
   createToken,
-  testAction,
+  createUser,
   closeModal,
   openModal,
   isLoadingStarted,
@@ -13,7 +13,7 @@ import {
 
 const Login = props => {
   const {
-    testAction,
+    createUser,
     createToken,
     closeModal,
     openModal,
@@ -23,7 +23,7 @@ const Login = props => {
   const handleSubmit = async data => {  // eslint-disable-line
     isLoadingStarted();
     const { name, email } = data;
-    testAction({ name, email });
+    createUser({ name, email });
     const doctor = await loginRequest(createToken, data);
     doctor ? history.push('/admin') : history.push('/consultancies'); // eslint-disable-line    
     closeModal();
@@ -40,7 +40,7 @@ const Login = props => {
 Login.propTypes = {
   createToken: PropTypes.func,
   isLoadingStarted: PropTypes.func,
-  testAction: PropTypes.func,
+  createUser: PropTypes.func,
   closeModal: PropTypes.func,
   openModal: PropTypes.func,
   history: PropTypes.shape({
@@ -49,7 +49,7 @@ Login.propTypes = {
 };
 Login.defaultProps = {
   createToken,
-  testAction,
+  createUser,
   closeModal,
   openModal,
   isLoadingStarted,
@@ -57,7 +57,7 @@ Login.defaultProps = {
 
 export default connect(null, {
   createToken,
-  testAction,
+  createUser,
   closeModal,
   openModal,
   isLoadingStarted,
