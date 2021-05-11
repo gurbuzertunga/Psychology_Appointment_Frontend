@@ -8,6 +8,7 @@ import {
   testAction,
   closeModal,
   openModal,
+  isLoadingStarted,
 } from '../actions/index';
 
 const Login = props => {
@@ -16,14 +17,17 @@ const Login = props => {
     createToken,
     closeModal,
     openModal,
+    isLoadingStarted,
   } = props;
   const history = useHistory(); // eslint-disable-line
   const handleSubmit = async data => {  // eslint-disable-line
+    isLoadingStarted();
     const { name, email } = data;
     testAction({ name, email });
     const doctor = await loginRequest(createToken, data);
     doctor ? history.push('/admin') : history.push('/consultancies'); // eslint-disable-line    
     closeModal();
+    isLoadingStarted();
   };
   return (
     <div className="flex flex-col">
@@ -35,6 +39,7 @@ const Login = props => {
 };
 Login.propTypes = {
   createToken: PropTypes.func,
+  isLoadingStarted: PropTypes.func,
   testAction: PropTypes.func,
   closeModal: PropTypes.func,
   openModal: PropTypes.func,
@@ -47,6 +52,7 @@ Login.defaultProps = {
   testAction,
   closeModal,
   openModal,
+  isLoadingStarted,
 };
 
 export default connect(null, {
@@ -54,4 +60,5 @@ export default connect(null, {
   testAction,
   closeModal,
   openModal,
+  isLoadingStarted,
 })(Login);

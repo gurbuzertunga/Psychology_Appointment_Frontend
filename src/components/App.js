@@ -17,13 +17,16 @@ import Modal from './modal/modal';
 import NotFound from '../containers/404';
 import Loading from './loading';
 
-const App = ({ modalIsOpen, loginOrSignup }) => (
+const App = ({ modalIsOpen, loginOrSignup, isLoadingStarted }) => (
   <>
     {
       modalIsOpen
       && (
         <Modal>
-          { loginOrSignup === 'login' ? <Login /> : <SignUp />}
+          { isLoadingStarted ? (
+            <Loading />
+          ) : null}
+          { !isLoadingStarted && loginOrSignup === 'login' ? <Login /> : !isLoadingStarted && <SignUp />}
         </Modal>
       )
     }
@@ -46,16 +49,19 @@ const App = ({ modalIsOpen, loginOrSignup }) => (
 App.propTypes = {
   modalIsOpen: PropTypes.bool,
   loginOrSignup: PropTypes.string,
+  isLoadingStarted: PropTypes.bool,
 };
 
 App.defaultProps = {
   modalIsOpen: false,
   loginOrSignup: '',
+  isLoadingStarted: false,
 };
 
 const mapStateToProps = state => ({
   modalIsOpen: state.modalReducer.modalIsOpen,
   loginOrSignup: state.modalReducer.loginOrSignup,
+  isLoadingStarted: state.modalReducer.isLoadingStarted,
 });
 
 export default connect(mapStateToProps)(App);

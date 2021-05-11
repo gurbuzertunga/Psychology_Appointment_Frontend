@@ -39,7 +39,7 @@ const AppointmentForm = ({ consultancies, authToken, setAppointment }) => {
         {
           consultancies && consultancies.map(consultancy => (
             <option
-              className="appearance-none focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded"
+              className="focus:outline-none focus:ring focus:border-blue-300 bg-blue-500 bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded"
               key={consultancy.id}
               id={consultancy.id}
               value={consultancy.area}

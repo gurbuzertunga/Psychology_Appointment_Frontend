@@ -11,12 +11,8 @@ class AppointmentList extends Component {
     appointmentsRequest(createAppointmentsList, auth);
   }
 
-  static handleClick() {
-
-  }
-
   render() {
-    const { appointments, handleClick } = this.props;
+    const { appointments } = this.props;
     return (
       <ul>
         {
@@ -24,7 +20,6 @@ class AppointmentList extends Component {
             <Appointment
               key={appointment.id}
               appointment={appointment}
-              handleClick={handleClick}
             />
           ))
         }
@@ -36,7 +31,6 @@ AppointmentList.propTypes = {
   createAppointmentsList: PropTypes.func,
   auth: PropTypes.string.isRequired,
   appointments: PropTypes.arrayOf(Array),
-  handleClick: PropTypes.func.isRequired,
 };
 AppointmentList.defaultProps = {
   createAppointmentsList,

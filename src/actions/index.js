@@ -1,5 +1,6 @@
 const OPEN_MODAL = 'OPEN_MODAL';
 const CLOSE_MODAL = 'CLOSE_MODAL';
+const IS_LOADING_STARTED = 'IS_LOADING_STARTED';
 const CREATE_TOKEN = 'CREATE_TOKEN';
 const REMOVE_TOKEN = 'REMOVE_TOKEN';
 const CREATE_CONSULTANCY = 'CREATE_CONSULTANCY';
@@ -20,6 +21,10 @@ const closeModal = () => ({
 const createToken = data => ({
   type: CREATE_TOKEN,
   payload: { token: data.authToken, isDoctor: data.isDoctor },
+});
+
+const isLoadingStarted = () => ({
+  type: IS_LOADING_STARTED,
 });
 
 const removeToken = () => {
@@ -57,6 +62,8 @@ export {
   OPEN_MODAL,
   closeModal,
   CLOSE_MODAL,
+  isLoadingStarted,
+  IS_LOADING_STARTED,
   CREATE_TOKEN,
   createToken,
   removeToken,
