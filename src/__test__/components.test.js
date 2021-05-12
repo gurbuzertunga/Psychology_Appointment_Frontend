@@ -21,7 +21,7 @@ it('should render the 404 page correctly', () => {
   const notFound = renderer.create(
     <BrowserRouter>
       <NotFound />
-    </BrowserRouter>
+    </BrowserRouter>,
   ).toJSON;
   expect(notFound).toMatchSnapshot();
 });

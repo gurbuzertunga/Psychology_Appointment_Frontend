@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import AdminPage from '../../containers/AdminPage';
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 const mockStore = configureMockStore();
 const store = mockStore({});
 const setup = () => shallow(

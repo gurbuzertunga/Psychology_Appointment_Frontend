@@ -9,7 +9,6 @@ AOS.init({
   duration: 400, // values from 0 to 3000, with step 50ms
 });
 const Appointment = ({ appointment, user }) => {
-  console.log(user);
   const {
     time,
     problem,

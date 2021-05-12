@@ -13,7 +13,6 @@ class AppointmentList extends Component {
 
   render() {
     const { appointments, user } = this.props;
-    console.log(user);
     return (
       <div className="flex mt-16">
         {
@@ -41,13 +40,10 @@ AppointmentList.defaultProps = {
   user: {},
 };
 
-const mapStateToProps = state => {
-  console.log(state.appointmentsReducer);
-  return {
-    appointments: state.appointmentsReducer.appointments.appointments,
-    user: state.appointmentsReducer.appointments.username,
-    auth: state.authenticationReducer.authToken,
-  };
-};
+const mapStateToProps = state => ({
+  appointments: state.appointmentsReducer.appointments.appointments,
+  user: state.appointmentsReducer.appointments.username,
+  auth: state.authenticationReducer.authToken,
+});
 
 export default connect(mapStateToProps, { createAppointmentsList })(AppointmentList);

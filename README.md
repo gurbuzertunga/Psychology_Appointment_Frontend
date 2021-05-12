@@ -1,70 +1,130 @@
-# Getting Started with Create React App
+# Psychologist's Office Appointment App (front end)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The table of contents
 
-## Available Scripts
+- About
+- Live-demo
+- Link for back-end repository
+- Features
+- How to use the application
+- Getting started (Development)
+- Launch the application
+- Test the application
+- Author
+- Show your support
+- Acknowledgments
+- Issues
+- 📝 License
 
-In the project directory, you can run:
+## About
 
-### `npm start`
+In this application, I have an appointment app for a Psychologist's office. The user can choose from a list of 
+consultancies and choose a date and time to make an appointment with the Psychologist at that time. the user has the admin privelege he can also create a new Consultancy area and see a list of all appointments made. The user logs in and signs up to the application using Json Web Token.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To build this application I used:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Javascript ES6;
+- Html/CSS;
+- React;
+- Redux;
+- React-Redux;
+- Jest;
+- Create React App;
+- React Hooks;
+- React Router
+- Linters ( eslint and stylelint)
 
-### `npm test`
+## Live-Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[The live demo link](https://youcef-react-book-appointment-car.netlify.app/)
 
-### `npm run build`
+## Link for back-end repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Link for back-end repository](https://github.com/gurbuzertunga/Psychology_Appointment_API)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Log in, log out and sign up
+- Show the list of consultancies;
+- Show the list of the appointments of the user;
+- Create a new consultancy;
+- Admin access
+- Admin can create a new consultancy
+- Admin can see a list of all appointments
 
-### `npm run eject`
+The Account of the admin is:
+- email: youcefabdellani@gmail.com
+- password: 123456
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## How to use the application
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Application has secure login and signup. A user must provide e-mail and password while logging in. On Sign Up 
+User must provide a username, e-mail, password and password confirmation.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+In this Application, on the home page, the user gets the information about the Psychologist. When the User creates a new account or sign in with their account they are sent to consultancies page where they can choose an area they want to make an appointment with. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+User can click any of the listed consultancies to get a detailed explanation on each consultancy area. User can make an appointment from both consultancies listing page and consultancy index page where they can see the area details. User also has access to ```MY PAGE``` where they can see their appointments.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+App also has an admin access where admin signs in with his/her account and the admin can create a new consultancy area providing area name and details. Admin can also list all the appointments made for him/her.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Getting started (Feature)
 
-### Code Splitting
+To get a local copy of the repository please run the following commands on your terminal:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+$ git clone git@github.com:gurbuzertunga/Psychology_Appointment_Frontend.git
+$ cd Psychology_Appointment_Frontend
+$ git checkout feature
 
-### Analyzing the Bundle Size
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Launch the application
 
-### Making a Progressive Web App
+After making the local copy of the repository:
+- get inside the repository folder;
+- setup the dependencies of the project: in the terminal run: ```npm install```
+- enter the command: ```npm start``` to start the server in localhost.
+- then you get the application in the localhost in your web browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Test the application
 
-### Advanced Configuration
+After making the local copy of the repository:
+- get inside the repository folder;
+- setup the dependencies of the project: in the terminal run: ```npm install```
+- enter the command: ```npm run test``` to test the application.
+- then you get the application tested.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+In this application I test the components using the snapshots and I test the logical functions using jest.
 
-### Deployment
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+👤 **Gürbüz Ertunga**
 
-### `npm run build` fails to minify
+- Github: [@gurbuzertunga](https://github.com/gurbuzertunga)
+- Twitter: [@dantewuhu](https://twitter.com/dantewuhu)
+- Linkedin: [GurbuzErtunga](https://www.linkedin.com/in/gurbuz-ertunga-a607a2a5/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Contributing
+
+Contributions, issues ,and feature requests are welcome!
+
+## Show your support
+
+Give an ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to [stackoverflow](https://stackoverflow.com) community.
+- Hat tip to [Microverse](https://www.microverse.org/) TSE for Code Review
+- Hat tip to [Create React App](https://github.com/facebook/create-react-app)
+- Hat tip to [Heroku](https://www.heroku.com/)
+- Hat tip to anyone whose code was used
+
+## Issues
+If you would like to report an issue [the link](https://github.com/gurbuzertunga/Psychology_Appointment_Frontend/issues)
+
+## 📝 License
+
+All source code is available jointly under the MIT License.
+See [MIT licence](./LICENSE.md) for details.
