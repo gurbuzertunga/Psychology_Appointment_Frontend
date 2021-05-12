@@ -42,6 +42,12 @@ To build this application I used:
 
 [Link for back-end repository](https://github.com/gurbuzertunga/Psychology_Appointment_API)
 
+## Screenshots
+
+![screenshot1](https://user-images.githubusercontent.com/65021553/118004632-4cac9100-b352-11eb-8fee-e29cabb2ca6c.png)
+
+![screenshot2](https://user-images.githubusercontent.com/65021553/118004823-7b2a6c00-b352-11eb-8187-02bee6959f55.png)
+
 ## Features
 
 - Log in, log out and sign up
