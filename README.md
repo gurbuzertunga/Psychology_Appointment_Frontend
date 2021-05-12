@@ -61,7 +61,7 @@ To build this application I used:
 - Admin can see a list of all appointments
 
 The Account of the admin is:
-- email: youcefabdellani@gmail.com
+- email: admin@email.com
 - password: 123456
 
 ## How to use the application
