@@ -48,6 +48,8 @@ To build this application I used:
 
 ![screenshot2](https://user-images.githubusercontent.com/65021553/118004823-7b2a6c00-b352-11eb-8187-02bee6959f55.png)
 
+![screenshot3](https://user-images.githubusercontent.com/65021553/118005142-ccd2f680-b352-11eb-862a-1d081326ef2e.png)
+
 ## Features
 
 - Log in, log out and sign up
