@@ -36,7 +36,7 @@ To build this application I used:
 
 ## Live-Demo
 
-[The live demo link](https://youcef-react-book-appointment-car.netlify.app/)
+[The live demo link](https://psychology-appointments.netlify.app/)
 
 ## Link for back-end repository
 
