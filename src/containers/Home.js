@@ -1,4 +1,4 @@
-import { GrDebian } from 'react-icons/all';
+import { GrDebian } from 'react-icons/gr';
 import React from 'react';
 import profilePic from '../assets/profilepic.jpg';
 

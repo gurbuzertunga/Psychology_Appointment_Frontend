@@ -37,7 +37,7 @@ const ConsultancyContainer = ({ consultancies, authToken, setAppointment }) => {
   };
   return (
     <div className="flex mt-16 justify-evenly">
-      <div data-aos="fade-down" className="bg-transparent border border-gray-300 p-4 rounded">
+      <div data-aos="fade-down" className="bg-transparent border border-gray-300 p-4 rounded w-5/12">
         <h1 className="text-white text-2xl font-bold my-4">Consultancy Details</h1>
         {
           consultancies.filter(consultancy => consultancy.id === parseInt(id)).map(el => ( // eslint-disable-line

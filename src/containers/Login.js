@@ -33,7 +33,7 @@ const Login = props => {
     <div className="flex flex-col">
       <h1 className="text-center my-4 text-white text-2xl font-extrabold">Login</h1>
       <LoginForm handleClick={handleSubmit} />
-      <div onClick={() => openModal('signup')} onKeyDown={openModal} role="presentation">Create a new Account</div>
+      <div className="font-light text-center cursor-pointer" onClick={() => openModal('signup')} onKeyDown={openModal} role="presentation">Create a new Account</div>
     </div>
   );
 };

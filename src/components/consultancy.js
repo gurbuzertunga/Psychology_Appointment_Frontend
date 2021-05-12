@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { SiReplDotIt } from 'react-icons/all';
+import { SiReplDotIt } from 'react-icons/si';
 
 const Consultancy = ({ consultancy, handleClick, history }) => {
   const { id, area } = consultancy;
