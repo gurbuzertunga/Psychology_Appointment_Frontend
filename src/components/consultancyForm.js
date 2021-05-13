@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { createConsultancy } from '../actions';
 import CreateConsultancyRequest from '../requests/createConsultancy';
@@ -11,6 +12,7 @@ const data = {
 
 const ConsultancyForm = ({ authToken, createConsultancy }) => {
   const [state, setState] = useState(data);
+  const history = useHistory();
   const handleInputChange = e => {
     const consultancyReq = { ...state };
     consultancyReq[e.target.name] = e.target.value;
@@ -20,6 +22,7 @@ const ConsultancyForm = ({ authToken, createConsultancy }) => {
   const handleSubmit = e => {
     e.preventDefault();
     CreateConsultancyRequest({ ...state, authToken }, createConsultancy);
+    history.push('/appointments');
   };
   return (
     <form className="flex flex-col" onSubmit={handleSubmit}>

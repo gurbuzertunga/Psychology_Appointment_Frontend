@@ -30,9 +30,8 @@ const AppointmentForm = ({ consultancies, authToken, setAppointment }) => {
   const handleSubmit = e => {
     e.preventDefault();
     makeAppointment({ ...state, authToken }, setAppointment);
-    console.log('IM HERE');
     setTimeout(() => {
-      history.push('/mypage');
+      history.push('/');
     }, 1000);
   };
   return (
