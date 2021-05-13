@@ -16,22 +16,22 @@ const Appointment = ({ appointment, user }) => {
   } = appointment;
 
   return (
-    <div data-aos="fade-down" className="bg-transparent border border-gray-300 p-4 mx-4 rounded">
+    <div data-aos="fade-down" className="bg-transparent border border-gray-300 p-4 m-4 rounded">
       <div className="flex">
-        <h2 className="text-white font-light mt-2 p-2 w-max">Date:</h2>
-        <h2 className="text-white font-light mt-2 p-2 w-max">{date}</h2>
+        <h2 className="text-white lg:text-base sm:text-4xl text-2xl font-light mt-2 p-2 w-max">Date:</h2>
+        <h2 className="text-white lg:text-base sm:text-4xl text-2xl font-light mt-2 p-2 w-max">{date}</h2>
       </div>
       <div className="flex">
-        <h2 className="text-white font-light mt-2 p-2 w-max">Time:</h2>
-        <h2 className="text-white font-light mt-2 p-2 w-max">{time}</h2>
+        <h2 className="text-white lg:text-base sm:text-4xl text-2xl font-light mt-2 p-2 w-max">Time:</h2>
+        <h2 className="text-white lg:text-base sm:text-4xl text-2xl font-light mt-2 p-2 w-max">{time}</h2>
       </div>
       <div className="flex">
-        <h2 className="text-white font-light mt-2 p-2 w-max">Problem:</h2>
-        <h2 className="text-white font-light mt-2 p-2">{problem}</h2>
+        <h2 className="text-white lg:text-base sm:text-4xl text-2xl font-light mt-2 p-2 w-max">Problem:</h2>
+        <h2 className="text-white lg:text-base sm:text-4xl text-2xl font-light mt-2 p-2">{problem}</h2>
       </div>
       <div className="flex">
-        <h2 className="text-white font-light mt-2 p-2 w-max">Patient:</h2>
-        <h2 className="text-white font-light mt-2 p-2">{user}</h2>
+        <h2 className="text-white lg:text-base sm:text-4xl text-2xl font-light mt-2 p-2 w-max">Patient:</h2>
+        <h2 className="text-white lg:text-base sm:text-4xl text-2xl font-light mt-2 p-2">{user}</h2>
       </div>
     </div>
   );

@@ -12,9 +12,9 @@ const Consultancies = props => {
   }
   const handleClick = data => console.log(data); // eslint-disable-line
   return (
-    <div className="flex justify-evenly mt-24">
+    <div className="flex lg:flex-row flex-col justify-evenly mt-24">
       <div className="flex flex-col items-center">
-        <h1 className="text-center my-4 text-white text-2xl font-extrabold">Services</h1>
+        <h1 className="text-center my-4 text-white lg:text-2xl sm:text-4xl text-2xl font-extrabold">Services</h1>
         <ConsultancyList handleClick={handleClick} />
       </div>
       <AppointmentForm />

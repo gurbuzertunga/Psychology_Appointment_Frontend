@@ -11,7 +11,7 @@ const AdminPage = props => {
   }
   return (
     <div className="flex flex-col justify-evenly items-center mt-16">
-      <h1 className="text-white text-2xl font-bold mb-4">Admin Page</h1>
+      <h1 className="text-white lg:text-2xl text-4xl font-bold mb-4">Admin Page</h1>
       <ConsultancyForm />
     </div>
   );

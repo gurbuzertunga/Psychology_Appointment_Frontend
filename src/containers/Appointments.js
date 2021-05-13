@@ -12,7 +12,7 @@ const Appointments = props => {
   const handleClick = data => console.log(data); // eslint-disable-line
   return (
     <div className="flex flex-col items-center justify-evenly">
-      <h1 className="text-white text-2xl font-bold mt-4">Appointments you have</h1>
+      <h1 className="text-white lg:text-2xl sm:text-4xl text-2xl lg:mt-4 sm:mt-24 mt-12 font-bold">Appointments you have</h1>
       <AppointmentList handleClick={handleClick} />
     </div>
   );

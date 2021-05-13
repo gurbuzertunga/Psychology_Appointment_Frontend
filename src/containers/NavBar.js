@@ -11,24 +11,26 @@ const Navbar = props => {
   };
   if (isDoctor === false) {
     return (
-      <div className="text-white bolder self-end mt-4 mr-4">
-        <Link className="mr-4 font-light" to="/consultancies">Consultancies</Link>
-        <Link className="mr-4 font-light" to="/mypage">My Appointments</Link>
-        <button className="bg-transparent bolder mr-4 font-light" type="submit" onClick={handleSubmit}>Sign Out</button>
+      <div className="text-white bolder self-end text-right mt-4 mr-4">
+        <Link className="sm:text-3xl text-base lg:text-base mr-4 font-light" to="/">Home</Link>
+        <Link className="sm:text-3xl text-base lg:text-base mr-4 font-light" to="/consultancies">Consultancies</Link>
+        <Link className="sm:text-3xl text-base lg:text-base mr-4 font-light" to="/mypage">My Appointments</Link>
+        <button className="sm:text-3xl text-base lg:text-base bg-transparent bolder mr-4 font-light" type="submit" onClick={handleSubmit}>Sign Out</button>
       </div>
     );
   } else if (isDoctor === true) { // eslint-disable-line
     return (
-      <div className="text-white bolder self-end mt-4 mr-4">
-        <Link className="mr-4 font-light" to="/appointments">Appointments</Link>
-        <Link className="mr-4 font-light" to="/admin">Admin Area</Link>
-        <button className="bg-transparent bolder mr-4 font-light" type="submit" onClick={handleSubmit}>Signout</button>
+      <div className="text-white bolder text-right self-end mt-4 mr-4">
+        <Link className="sm:text-3xl text-base lg:text-base mr-4 font-light" to="/">Home</Link>
+        <Link className="sm:text-3xl text-base lg:text-base mr-4 font-light" to="/appointments">Appointments</Link>
+        <Link className="sm:text-3xl text-base lg:text-base mr-4 font-light" to="/admin">Admin Area</Link>
+        <button className="sm:text-3xl text-base lg:text-base bg-transparent bolder mr-4 font-light" type="submit" onClick={handleSubmit}>Signout</button>
       </div>
     );
   } return (
-    <div className="text-white bolder self-end flex mt-4 mr-4">
-      <button className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder text-white mr-4" type="submit" onClick={() => openModal('login')}>Login</button>
-      <button className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder text-white mr-4" type="submit" onClick={() => openModal('signup')}>Sign Up</button>
+    <div className="text-white bolder text-right self-end flex mt-4 mr-4">
+      <button className="sm:text-4xl text-base lg:text-base focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder text-white mr-4" type="submit" onClick={() => openModal('login')}>Login</button>
+      <button className="sm:text-4xl text-base lg:text-base focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder text-white mr-4" type="submit" onClick={() => openModal('signup')}>Sign Up</button>
     </div>
   );
 };

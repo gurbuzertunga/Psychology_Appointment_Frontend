@@ -12,8 +12,8 @@ const Consultancy = ({ consultancy, handleClick, history }) => {
 
   return (
     <div onClick={() => clickEffect(id)} onKeyPress={() => clickEffect(id)} role="presentation">
-      <h4 className="flex items-center text-white font-light cursor-pointer">
-        <SiReplDotIt className="mr-4 text-white" />
+      <h4 className="flex items-center text-white lg:text-base sm:text-4xl text-2xl font-light cursor-pointer">
+        <SiReplDotIt className="mr-4 lg:text-base sm:text-4xl text-2xl text-white" />
         {area}
       </h4>
     </div>

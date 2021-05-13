@@ -31,17 +31,17 @@ const AppointmentForm = ({ consultancies, authToken, setAppointment }) => {
   };
   return (
     <div className="flex flex-col">
-      <h1 className="text-white text-2xl font-bold my-4">Make an Appointment</h1>
+      <h1 className="text-white lg:text-2xl sm:text-4xl text-2xl text-center font-bold my-4">Make an Appointment</h1>
       <form className="flex flex-col border border-gray-300 rounded py-4 mx-auto" onSubmit={handleSubmit}>
-        <input className="font-light focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" type="time" name="time" id="time" onChange={handleInputChange} />
-        <input className="font-light focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" type="date" name="date" id="date" onChange={handleInputChange} />
-        <textarea className="font-light text-sm focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" name="problem" id="problem" placeholder="Some details about your problem..." onChange={handleInputChange} />
-        <select className="font-light focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" name="consultancies" id="" onChange={handleInputChange}>
+        <input className="lg:text-base sm:text-4xl text-2xl font-light focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" type="time" name="time" id="time" onChange={handleInputChange} />
+        <input className="lg:text-base sm:text-4xl text-2xl  font-light focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" type="date" name="date" id="date" onChange={handleInputChange} />
+        <textarea className="lg:text-sm sm:text-4xl text-2xl font-light focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" name="problem" id="problem" placeholder="Some details about your problem..." onChange={handleInputChange} />
+        <select className="lg:text-base sm:text-4xl text-2xl font-light focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded" name="consultancies" id="" onChange={handleInputChange}>
           return (
           {
             consultancies && consultancies.map(consultancy => (
               <option
-                className="font-light focus:outline-none focus:ring focus:border-blue-300 bg-blue-500 bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded"
+                className="lg:text-base text-4xl font-light focus:outline-none focus:ring focus:border-blue-300 bg-blue-500 bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded"
                 key={consultancy.id}
                 id={consultancy.id}
                 value={consultancy.area}
@@ -52,7 +52,7 @@ const AppointmentForm = ({ consultancies, authToken, setAppointment }) => {
         }
           );
         </select>
-        <button className="text-white font-light" type="submit">Submit</button>
+        <button className="text-white font-light lg:text-base text-4xl" type="submit">Submit</button>
       </form>
     </div>
   );

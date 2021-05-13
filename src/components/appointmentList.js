@@ -14,7 +14,7 @@ class AppointmentList extends Component {
   render() {
     const { appointments, user } = this.props;
     return (
-      <div className="flex mt-16">
+      <div className="flex lg:flex-row flex-col sm:mt-16 mt-8">
         {
           appointments && appointments.map(appointment => (
             <Appointment

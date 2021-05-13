@@ -30,9 +30,9 @@ const SignUp = (
   };
   return (
     <div className="flex flex-col">
-      <h1 className="text-center my-4 text-white text-2xl font-extrabold">Sign Up</h1>
+      <h1 className="text-center my-4 text-white lg:text-2xl text-4xl font-extrabold">Sign Up</h1>
       <SignUpForm handleClick={handleSubmit} />
-      <div className="font-light text-center cursor-pointer" onClick={() => openModal('login')} onKeyDown={openModal} role="presentation">Already have an Account?</div>
+      <div className="font-light text-center lg:text-base text-2xl cursor-pointer" onClick={() => openModal('login')} onKeyDown={openModal} role="presentation">Already have an Account?</div>
     </div>
   );
 };
