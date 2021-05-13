@@ -8,7 +8,6 @@ html {
   background: linear-gradient(180deg, rgba(95, 165, 249, 0.75) 0%, rgba(16, 185, 129, 0.75) 100%), url(../src/assets/mainbg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: -webkit-fill-available;
 }
 /* stylelint-enable */
 body {

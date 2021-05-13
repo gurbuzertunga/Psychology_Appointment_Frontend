@@ -14,7 +14,7 @@ class AppointmentList extends Component {
   render() {
     const { appointments, user } = this.props;
     return (
-      <div className="flex lg:flex-row flex-col sm:mt-16 mt-8">
+      <div className="flex lg:flex-row flex-wrap justify-evenly flex-col sm:mt-16 mt-8">
         {
           appointments && appointments.map(appointment => (
             <Appointment
@@ -32,12 +32,11 @@ AppointmentList.propTypes = {
   createAppointmentsList: PropTypes.func,
   auth: PropTypes.string.isRequired,
   appointments: PropTypes.arrayOf(Array),
-  user: PropTypes.objectOf(Object),
+  user: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };
 AppointmentList.defaultProps = {
   createAppointmentsList,
   appointments: [],
-  user: {},
 };
 
 const mapStateToProps = state => ({

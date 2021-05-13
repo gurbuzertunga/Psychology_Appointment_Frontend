@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { setAppointment } from '../actions';
 import makeAppointment from '../requests/makeAppointment';
@@ -13,6 +14,7 @@ const data = {
 
 const AppointmentForm = ({ consultancies, authToken, setAppointment }) => {
   const [state, setState] = useState(data);
+  const history = useHistory();
   const handleInputChange = e => {
     let id;
     consultancies.forEach(consultancy => {
@@ -28,6 +30,10 @@ const AppointmentForm = ({ consultancies, authToken, setAppointment }) => {
   const handleSubmit = e => {
     e.preventDefault();
     makeAppointment({ ...state, authToken }, setAppointment);
+    console.log('IM HERE');
+    setTimeout(() => {
+      history.push('/mypage');
+    }, 1000);
   };
   return (
     <div className="flex flex-col">
@@ -49,7 +55,7 @@ const AppointmentForm = ({ consultancies, authToken, setAppointment }) => {
                 {consultancy.area}
               </option>
             ))
-        }
+          }
           );
         </select>
         <button className="text-white font-light lg:text-base text-4xl" type="submit">Submit</button>
