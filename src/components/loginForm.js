@@ -29,10 +29,10 @@ const LoginForm = ({ handleClick }) => {
   };
 
   return (
-    <form className="flex flex-col border border-gray-300 rounded py-4 mx-auto lg:w-5/12 sm:w-full w-11/12" onSubmit={handleSubmit}>
-      <input placeholder="Email" className="lg:text-base text-2xl focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white font-light text-white p-1 mb-4 mx-6 border border-gray-300 rounded" type="email" id="email" value={data.email} onChange={handleChange} />
-      <input placeholder="Password" className="lg:text-base text-2xl focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white font-light text-white p-1 mb-4 mx-6 border border-gray-300 rounded" type="password" id="password" value={data.password} onChange={handleChange} />
-      <input className="lg:text-base sm:text-2xl p-1 focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder text-white mr-2 border w-4/12 place-self-center font-light border-gray-300 rounded" type="submit" value="Submit" />
+    <form className="flex flex-col border border-gray-300 rounded py-4 mx-auto w-5/12" onSubmit={handleSubmit}>
+      <input placeholder="Email" className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white font-light text-white p-1 mb-4 mx-6 border border-gray-300 rounded" type="email" id="email" value={data.email} onChange={handleChange} />
+      <input placeholder="Password" className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white font-light text-white p-1 mb-4 mx-6 border border-gray-300 rounded" type="password" id="password" value={data.password} onChange={handleChange} />
+      <input className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder text-white mr-2 border w-4/12 place-self-center font-light border-gray-300 rounded" type="submit" value="Submit" />
     </form>
   );
 };

@@ -21,13 +21,18 @@ const loginRequest = async (createToken, userdata) => {
   const auth = {
     authToken: data.auth_token,
     isDoctor: data.doctor,
+    message: data.message,
   };
   try {
     createToken(auth);
   } catch (error) {
     createToken(error);
   }
-  return (
+  if (data.message) {
+    return (
+      data.message
+    );
+  } return (
     data.doctor
   );
 };

@@ -16,7 +16,7 @@ const Modal = props => {
 };
 
 Modal.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired,
 };
 
 export default Modal;

@@ -19,8 +19,8 @@ const Login = props => {
     openModal,
     isLoadingStarted,
   } = props;
-  const history = useHistory(); // eslint-disable-line
-  const handleSubmit = async data => {  // eslint-disable-line
+  const history = useHistory();
+  const handleSubmit = async data => {
     isLoadingStarted();
     const { name, email } = data;
     createUser({ name, email });
@@ -44,8 +44,8 @@ Login.propTypes = {
   closeModal: PropTypes.func,
   openModal: PropTypes.func,
   history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
+    push: PropTypes.func,
+  }),
 };
 Login.defaultProps = {
   createToken,
@@ -53,6 +53,7 @@ Login.defaultProps = {
   closeModal,
   openModal,
   isLoadingStarted,
+  history: {},
 };
 
 export default connect(null, {

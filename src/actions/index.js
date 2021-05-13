@@ -21,7 +21,7 @@ const closeModal = () => ({
 
 const createToken = data => ({
   type: CREATE_TOKEN,
-  payload: { token: data.authToken, isDoctor: data.isDoctor },
+  payload: { token: data.authToken, isDoctor: data.isDoctor, message: data.message },
 });
 
 const isLoadingStarted = () => ({
