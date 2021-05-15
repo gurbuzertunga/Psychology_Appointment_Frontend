@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { useParams, Redirect } from 'react-router-dom';
+import { useParams, Redirect, useHistory } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
@@ -24,7 +24,7 @@ const ConsultancyContainer = ({ consultancies, authToken, setAppointment }) => {
   };
 
   const [state, setState] = useState(data);
-
+  const history = useHistory();
   const handleInputChange = e => {
     const appointmentReq = { ...state };
     appointmentReq[e.target.name] = e.target.value;
@@ -34,6 +34,9 @@ const ConsultancyContainer = ({ consultancies, authToken, setAppointment }) => {
   const handleSubmit = e => {
     e.preventDefault();
     makeAppointment({ ...state, authToken }, setAppointment);
+    setTimeout(() => {
+      history.push('/');
+    }, 1000);
   };
   return (
     <div className="flex mt-16 justify-evenly">
