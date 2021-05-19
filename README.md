@@ -73,7 +73,6 @@ In this Application, on the home page, the user gets the information about the P
 
 User can click any of the listed consultancies to get a detailed explanation on each consultancy area. User can make an appointment from both consultancies listing page and consultancy index page where they can see the area details. User also has access to ```MY PAGE``` where they can see their appointments.
 
-
 App also has an admin access where admin signs in with his/her account and the admin can create a new consultancy area providing area name and details. Admin can also list all the appointments made for him/her.
 
 ## Getting started (Feature)
