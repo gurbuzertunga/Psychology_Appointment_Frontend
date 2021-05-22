@@ -36,7 +36,7 @@ To build this application I used:
 
 ## Live-Demo
 
-[The live demo link](https://psychology-appointments.vercel.app/)
+[The live demo link](https://psychology-appointments-app.vercel.app/)
 
 ## Link for back-end repository
 
