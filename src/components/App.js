@@ -16,6 +16,7 @@ import ConsultancyContainer from '../containers/ConsultancyContainer';
 import Modal from './modal/modal';
 import NotFound from '../containers/404';
 import Loading from './loading';
+import Wrong from '../containers/Wrong';
 
 const App = ({ modalIsOpen, loginOrSignup, isLoadingStarted }) => (
   <>
@@ -38,6 +39,7 @@ const App = ({ modalIsOpen, loginOrSignup, isLoadingStarted }) => (
         <Route exact path="/appointments" component={Appointments} />
         <Route exact path="/consultancies" component={Consultancies} />
         <Route exact path="/admin" component={AdminPage} />
+        <Route path="/wrong" component={Wrong} />
         <Route path="/consultancies/:id" component={ConsultancyContainer} />
         <Route component={NotFound} />
         <Route component={Loading} />

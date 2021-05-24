@@ -25,7 +25,17 @@ const Login = props => {
     const { name, email } = data;
     createUser({ name, email });
     const doctor = await loginRequest(createToken, data);
-    doctor ? history.push('/admin') : history.push('/consultancies'); // eslint-disable-line    
+    switch (doctor) {
+      case 'Invalid credentials':
+        history.push('/wrong');
+        break;
+      case true:
+        history.push('/admin');
+        break;
+      default:
+        history.push('/consultancies');
+        break;
+    }
     closeModal();
     isLoadingStarted();
   };
