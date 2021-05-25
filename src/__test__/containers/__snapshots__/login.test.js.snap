@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Component renders the Consultancies List Component 1`] = `ShallowWrapper {}`;

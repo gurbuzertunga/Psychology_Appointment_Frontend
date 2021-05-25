@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LoginForm correctly 1`] = `
+<form
+  className="flex flex-col border border-gray-300 rounded py-4 mx-auto w-5/12"
+  onSubmit={[Function]}
+>
+  <input
+    className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white font-light text-white p-1 mb-4 mx-6 border border-gray-300 rounded"
+    id="email"
+    onChange={[Function]}
+    placeholder="Email"
+    type="email"
+    value=""
+  />
+  <input
+    className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder placeholder-white font-light text-white p-1 mb-4 mx-6 border border-gray-300 rounded"
+    id="password"
+    onChange={[Function]}
+    placeholder="Password"
+    type="password"
+    value=""
+  />
+  <input
+    className="focus:outline-none focus:ring focus:border-blue-300 bg-transparent bolder text-white mr-2 border w-4/12 place-self-center font-light border-gray-300 rounded"
+    type="submit"
+    value="Submit"
+  />
+</form>
+`;
+
+exports[`should render signupForm correctly 1`] = `
+<form
+  className="flex flex-col border border-gray-300 rounded py-4 mx-auto w-5/12"
+  onSubmit={[Function]}
+>
+  <input
+    className="font-light focus:outline-none focus:ring focus:border-blue-500 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded"
+    id="name"
+    onChange={[Function]}
+    placeholder="Name"
+    type="text"
+    value=""
+  />
+  <input
+    className="font-light focus:outline-none focus:ring focus:border-blue-500 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded"
+    id="email"
+    onChange={[Function]}
+    placeholder="Email"
+    type="email"
+    value=""
+  />
+  <input
+    className="font-light focus:outline-none focus:ring focus:border-blue-500 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded"
+    id="password"
+    onChange={[Function]}
+    placeholder="Password"
+    type="password"
+    value=""
+  />
+  <input
+    className="font-light focus:outline-none focus:ring focus:border-blue-500 bg-transparent bolder placeholder-white text-white p-1 mb-4 mx-6 border border-gray-300 rounded"
+    id="passwordConfirm"
+    onChange={[Function]}
+    placeholder="Password Confirm"
+    type="password"
+    value=""
+  />
+  <input
+    className="font-light focus:outline-none focus:ring focus:border-blue-500 bg-transparent bolder text-white mr-2 border w-4/12 place-self-center border-gray-300 rounded"
+    type="submit"
+    value="Submit"
+  />
+</form>
+`;
+
+exports[`should render the 404 page correctly 1`] = `[Function]`;
+
+exports[`should render the home page correctly 1`] = `[Function]`;
+
+exports[`should render the home page correctly 2`] = `[Function]`;
+
+exports[`should render the welcome page correctly 1`] = `[Function]`;

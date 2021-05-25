@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+# Psychologist's Office Appointment App (front end)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The table of contents
 
-## Available Scripts
+- About
+- Live-demo
+- Link for back-end repository
+- Features
+- How to use the application
+- Getting started (Development)
+- Launch the application
+- Test the application
+- Author
+- Show your support
+- Acknowledgments
+- Issues
+- 📝 License
 
-In the project directory, you can run:
+## About
 
-### `npm start`
+In this application, I have an appointment app for a Psychologist's office. The user can choose from a list of 
+consultancies and choose a date and time to make an appointment with the Psychologist at that time. the user has the admin privelege he can also create a new Consultancy area and see a list of all appointments made. The user logs in and signs up to the application using Json Web Token.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To build this application I used:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Javascript ES6;
+- Html/CSS;
+- React;
+- Redux;
+- React-Redux;
+- Jest;
+- Create React App;
+- React Hooks;
+- React Router
+- Linters ( eslint and stylelint)
 
-### `npm test`
+## Live-Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[The live demo link](https://psychology-appointments-app.vercel.app/)
 
-### `npm run build`
+## Link for back-end repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Link for back-end repository](https://github.com/gurbuzertunga/Psychology_Appointment_API)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Screenshots
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![screenshot1](https://user-images.githubusercontent.com/65021553/118004632-4cac9100-b352-11eb-8fee-e29cabb2ca6c.png)
 
-### `npm run eject`
+![screenshot2](https://user-images.githubusercontent.com/65021553/118004823-7b2a6c00-b352-11eb-8187-02bee6959f55.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![screenshot3](https://user-images.githubusercontent.com/65021553/118005142-ccd2f680-b352-11eb-862a-1d081326ef2e.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Log in, log out and sign up
+- Show the list of consultancies;
+- Show the list of the appointments of the user;
+- Create a new consultancy;
+- Admin access
+- Admin can create a new consultancy
+- Admin can see a list of all appointments
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The Account of the admin is:
+- email: admin@email.com
+- password: 123456
 
-## Learn More
+## How to use the application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Application has secure login and signup. A user must provide e-mail and password while logging in. On Sign Up 
+User must provide a username, e-mail, password and password confirmation.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In this Application, on the home page, the user gets the information about the Psychologist. When the User creates a new account or sign in with their account they are sent to consultancies page where they can choose an area they want to make an appointment with. 
 
-### Code Splitting
+User can click any of the listed consultancies to get a detailed explanation on each consultancy area. User can make an appointment from both consultancies listing page and consultancy index page where they can see the area details. User also has access to ```MY PAGE``` where they can see their appointments.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+App also has an admin access where admin signs in with his/her account and the admin can create a new consultancy area providing area name and details. Admin can also list all the appointments made for him/her.
 
-### Analyzing the Bundle Size
+## Getting started (Feature)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To get a local copy of the repository please run the following commands on your terminal:
 
-### Making a Progressive Web App
+```
+$ git clone git@github.com:gurbuzertunga/Psychology_Appointment_Frontend.git
+$ cd Psychology_Appointment_Frontend
+$ git checkout feature
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
 
-### Advanced Configuration
+## Launch the application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+After making the local copy of the repository:
+- get inside the repository folder;
+- setup the dependencies of the project: in the terminal run: ```npm install```
+- enter the command: ```npm start``` to start the server in localhost.
+- then you get the application in the localhost in your web browser.
 
-### Deployment
+## Test the application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+After making the local copy of the repository:
+- get inside the repository folder;
+- setup the dependencies of the project: in the terminal run: ```npm install```
+- enter the command: ```npm run test``` to test the application.
+- then you get the application tested.
 
-### `npm run build` fails to minify
+In this application I test the components using the snapshots and I test the logical functions using jest.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+
+👤 **Gürbüz Ertunga**
+
+- Github: [@gurbuzertunga](https://github.com/gurbuzertunga)
+- Twitter: [@dantewuhu](https://twitter.com/dantewuhu)
+- Linkedin: [GurbuzErtunga](https://www.linkedin.com/in/gurbuz-ertunga-a607a2a5/)
+
+## 🤝 Contributing
+
+Contributions, issues ,and feature requests are welcome!
+
+## Show your support
+
+Give an ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to [stackoverflow](https://stackoverflow.com) community.
+- Hat tip to [Microverse](https://www.microverse.org/) TSE for Code Review
+- Hat tip to [Create React App](https://github.com/facebook/create-react-app)
+- Hat tip to [Heroku](https://www.heroku.com/)
+- Hat tip to anyone whose code was used
+
+## Issues
+If you would like to report an issue [the link](https://github.com/gurbuzertunga/Psychology_Appointment_Frontend/issues)
+
+## 📝 License
+
+All source code is available jointly under the MIT License.
+See [MIT licence](./LICENSE.md) for details.
